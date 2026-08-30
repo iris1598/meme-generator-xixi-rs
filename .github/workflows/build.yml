@@ -45,7 +45,7 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
-          name: "meme-generator-contrib-${{ matrix.platform.label }}"
+          name: "meme-generator-xixi-${{ matrix.platform.label }}"
           path: |
             target/${{ matrix.platform.target }}/release/*.dll
             target/${{ matrix.platform.target }}/release/*.dylib
@@ -78,7 +78,7 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
-          name: "meme-generator-contrib-${{ matrix.platform.label }}"
+          name: "meme-generator-xixi-${{ matrix.platform.label }}"
           path: |
             target/${{ matrix.platform.target }}/release/*.so
 
@@ -106,6 +106,6 @@ jobs:
 
       - uses: actions/upload-artifact@v6
         with:
-          name: "meme-generator-contrib-${{ matrix.platform.label }}"
+          name: "meme-generator-xixi-${{ matrix.platform.label }}"
           path: |
             target/${{ matrix.platform.target }}/release/*.so

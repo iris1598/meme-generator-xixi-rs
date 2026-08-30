@@ -1,12 +1,12 @@
 [package]
-name = "meme_generator_contrib"
-description = "Meme generator extra memes"
-version = "0.0.1"
-authors = ["meetwq <meetwq@gmail.com>"]
+name = "meme_generator_xixi"
+description = "Extra memes for meme-generator-rs: xixi_holdsign_1 / xixi_holdsign_2"
+version = "0.1.0"
+authors = ["xixi <xixi@example.com>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/MemeCrafters/meme-generator-contrib-rs"
-repository = "https://github.com/MemeCrafters/meme-generator-contrib-rs"
+homepage = "https://github.com/xixi/meme-generator-xixi"
+repository = "https://github.com/xixi/meme-generator-xixi"
 edition = "2024"
 
 [lib]

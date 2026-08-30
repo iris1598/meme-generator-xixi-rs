@@ -1,15 +1,36 @@
-# `meme-generator-rs` 额外表情仓库
+# meme-generator-xixi
 
-此仓库为 表情包生成器 [meme-generator-rs](https://github.com/MemeCrafters/meme-generator-rs) 的额外表情包仓库
+`meme-generator-rs` 的额外表情仓库，提供两个表情：
 
-用于放置一些 较为小众的表情、试验性的表情、可能引起不适的表情 等不适合放在主仓库的表情
+| Key | 关键字 | 默认文本 |
+| --- | --- | --- |
+| `xixi_holdsign_1` | 西西举牌、西西举牌1 | 咕噜噜-- |
+| `xixi_holdsign_2` | 西西举牌2 | 点亮语乂 |
 
-可在 [Actions](https://github.com/MemeCrafters/meme-generator-contrib-rs/actions) 中下载编译好的动态链接库，并参考 [`meme-generator-rs` 加载其他表情的方式](https://github.com/MemeCrafters/meme-generator-rs/wiki/%E5%8A%A0%E8%BD%BD%E5%85%B6%E4%BB%96%E8%A1%A8%E6%83%85) 进行加载
+两个表情都是 30 fps 的 GIF 模板，举牌会按每帧的参考位置 + 角度摆动，牌面写用户传入的文本。字体使用 `Kingnammm Maiyuan 2`（荆南麦圆体 II），文字颜色 `#f8b860`。
 
-## 表情列表
+## 编译
 
-表情详细信息、表情预览等可以在 [--> 表情列表 <--](https://github.com/MemeCrafters/meme-generator-contrib-rs/wiki/%E8%A1%A8%E6%83%85%E5%88%97%E8%A1%A8) 查看
+```sh
+cargo build --release
+```
+
+产物：
+
+- Windows: `target/release/meme_generator_xixi.dll`
+- Linux: `target/release/libmeme_generator_xixi.so`
+- macOS: `target/release/libmeme_generator_xixi.dylib`
+
+按 [meme-generator-rs 加载其他表情的方式](https://github.com/MemeCrafters/meme-generator-rs/wiki/%E5%8A%A0%E8%BD%BD%E5%85%B6%E4%BB%96%E8%A1%A8%E6%83%85) 加载即可。
+
+## 字体
+
+`resources/fonts/Kingnammm-Maiyuan.ttf` 是表情运行所需的字体。`meme-generator-rs` 的字体加载路径默认是 `~/.meme_generator/resources/fonts/`（可通过 `MEME_FONTS_DIR` 环境变量覆盖）。把这个 ttf 复制到那个目录里，再加载本仓库的 cdylib 就能正常出图。
+
+## GitHub Actions
+
+`.github/workflows/build.yml` 复用了上游 `meme-generator-contrib-rs` 的 build 流程，会在 windows / macos / linux / android 上编译 cdylib，并上传成 artifact。
 
 ## 声明
 
-本仓库的表情素材等均来自网络，如有侵权请联系作者删除
+本仓库的表情素材等均来自网络，仅作学习交流使用，如有侵权请联系作者删除。
