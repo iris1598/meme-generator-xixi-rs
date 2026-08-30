@@ -14,27 +14,44 @@ use crate::{options::NoOptions, register_meme};
 const FRAME_NUM: u32 = 30;
 const FPS: f32 = 30.0;
 
-const MAX_TEXT_WIDTH: f32 = 130.0;
 const MIN_FONT_SIZE: f32 = 18.0;
 const MAX_FONT_SIZE: f32 = 40.0;
 
-const DEFAULT_TEXT: &str = "点亮语乂";
+/// The sign's white interior, measured from the blank template frames,
+/// expressed as the extent (in px) from the per-frame text center in the
+/// sign's rotated frame (u along the sign, v across it, +v down):
+/// (left, right, top, bottom).
+const SIGN_LEFT: f32 = 84.9;
+const SIGN_RIGHT: f32 = 91.1;
+const SIGN_TOP: f32 = 53.7;
+const SIGN_BOTTOM: f32 = 54.8;
+
+/// Margin (留白) kept between the text and the sign border.
+const SIGN_PADDING: f32 = 12.0;
+
+/// Usable text area inside the sign.
+const TEXT_AREA_W: f32 = SIGN_LEFT + SIGN_RIGHT - 2.0 * SIGN_PADDING;
+const TEXT_AREA_H: f32 = SIGN_TOP + SIGN_BOTTOM - 2.0 * SIGN_PADDING;
+
+/// Sign center relative to the text center in the sign's rotated frame.
+/// The reference text sat centered on the sign, so the text block is
+/// centered here.
+const SIGN_CENTER_OFFSET: (f32, f32) = (
+    (SIGN_RIGHT - SIGN_LEFT) / 2.0,
+    (SIGN_BOTTOM - SIGN_TOP) / 2.0,
+);
 
 /// Per-frame text center (cx, cy) and sign/text rotation angle (deg), measured
 /// from the reference images. The sign is held at a near-constant tilt of about
 /// +3.94 deg, but its position in the frame shifts horizontally (a small sway
 /// in the holder's arm), so the text tracks that.
-///
-/// The raw text-pixels centroid is biased left by ~3.5 px (and up by ~0.9 px)
-/// due to glyph weight and anti-aliased halo. Pre-shift each entry so the
-/// rendered text lands at the sign's actual geometric center.
 const TEXT_CENTERS: [(f32, f32); FRAME_NUM as usize] = [
-    (192.3, 92.4), (190.1, 92.5), (189.7, 92.4), (189.8, 92.4), (190.0, 92.4),
-    (190.9, 92.4), (191.4, 92.4), (191.4, 92.4), (190.7, 92.4), (190.6, 92.4),
-    (191.1, 92.5), (194.3, 92.4), (195.2, 92.4), (196.1, 92.5), (193.5, 92.4),
-    (192.1, 92.5), (191.0, 92.5), (193.0, 92.4), (195.4, 92.4), (196.5, 92.4),
-    (195.5, 92.4), (192.6, 92.4), (190.6, 92.4), (191.4, 92.4), (193.1, 92.4),
-    (195.0, 92.4), (197.9, 92.4), (196.7, 92.4), (195.3, 92.4), (190.5, 92.4),
+    (188.8, 91.5), (186.6, 91.6), (186.2, 91.5), (186.3, 91.5), (186.5, 91.5),
+    (187.4, 91.5), (187.9, 91.5), (187.9, 91.5), (187.2, 91.5), (187.1, 91.5),
+    (187.6, 91.6), (190.8, 91.5), (191.7, 91.5), (192.6, 91.6), (190.0, 91.5),
+    (188.6, 91.6), (187.5, 91.6), (189.5, 91.5), (191.9, 91.5), (193.0, 91.5),
+    (192.0, 91.5), (189.1, 91.5), (187.1, 91.5), (187.9, 91.5), (189.6, 91.5),
+    (191.5, 91.5), (194.4, 91.5), (193.2, 91.5), (191.8, 91.5), (187.0, 91.5),
 ];
 
 const TEXT_ANGLES: [f32; FRAME_NUM as usize] = [
@@ -46,24 +63,128 @@ const TEXT_ANGLES: [f32; FRAME_NUM as usize] = [
     3.94, 3.93, 3.91, 3.95, 3.91,
 ];
 
-fn pick_font_size(text: &str, paint: &skia_safe::Paint) -> f32 {
+const DEFAULT_TEXT: &str = "点亮语乂";
+
+fn measure_width(text: &str, size: f32, paint: &skia_safe::Paint) -> f32 {
+    Text2Image::from_text(
+        text,
+        size,
+        text_params!(
+            text_align = TextAlign::Center,
+            font_families = &["Kingnammm Maiyuan 2"],
+            paint = paint.clone(),
+        ),
+    )
+    .longest_line()
+}
+
+/// Wrap units: ASCII alphanumeric runs stay together (words), every other
+/// character (CJK, punctuation, spaces) is its own unit.
+fn wrap_units(text: &str) -> Vec<String> {
+    let mut units = Vec::new();
+    let mut word = String::new();
+    for c in text.chars() {
+        if c.is_ascii_alphanumeric() {
+            word.push(c);
+        } else {
+            if !word.is_empty() {
+                units.push(std::mem::take(&mut word));
+            }
+            units.push(c.to_string());
+        }
+    }
+    if !word.is_empty() {
+        units.push(word);
+    }
+    units
+}
+
+/// Greedily wrap `units` into lines each at most `max_w` wide at `size`.
+/// Returns `None` if a single unit alone is wider than `max_w`.
+fn wrap_units_in(units: &[String], size: f32, max_w: f32, paint: &skia_safe::Paint) -> Option<Vec<String>> {
+    if units.is_empty() {
+        return Some(Vec::new());
+    }
+    let unit_range = |start: usize, end: usize| -> String { units[start..end].concat() };
+    if measure_width(&unit_range(0, units.len()), size, paint) <= max_w {
+        return Some(vec![unit_range(0, units.len())]);
+    }
+    let mut lines = Vec::new();
+    let mut start = 0;
+    while start < units.len() {
+        if measure_width(&unit_range(start, units.len()), size, paint) <= max_w {
+            lines.push(unit_range(start, units.len()).trim().to_string());
+            break;
+        }
+        if measure_width(&unit_range(start, start + 1), size, paint) > max_w {
+            return None;
+        }
+        let mut lo = start + 1;
+        let mut hi = units.len();
+        while hi - lo > 1 {
+            let mid = (lo + hi) / 2;
+            if measure_width(&unit_range(start, mid), size, paint) <= max_w {
+                lo = mid;
+            } else {
+                hi = mid;
+            }
+        }
+        lines.push(unit_range(start, lo).trim().to_string());
+        start = lo;
+    }
+    Some(lines.into_iter().filter(|l| !l.is_empty()).collect())
+}
+
+fn wrap_lines(text: &str, size: f32, max_w: f32, paint: &skia_safe::Paint) -> Option<Vec<String>> {
+    wrap_units_in(&wrap_units(text), size, max_w, paint)
+}
+
+struct FittedText {
+    wrapped: String,
+    font_size: f32,
+}
+
+/// Fit `text` into the sign's text area: first wrap lines at the largest
+/// font size, only shrinking the font when the wrapped block is still too
+/// tall for the sign. The chosen size and wrapping are reused for every
+/// frame in one GIF.
+fn fit_text(text: &str, paint: &skia_safe::Paint) -> FittedText {
     let mut size = MAX_FONT_SIZE;
-    while size >= MIN_FONT_SIZE {
-        let img = Text2Image::from_text(
-            text,
-            size,
-            text_params!(
-                text_align = TextAlign::Center,
-                font_families = &["Kingnammm Maiyuan 2"],
-                paint = paint.clone(),
-            ),
-        );
-        if img.longest_line() <= MAX_TEXT_WIDTH {
-            return size;
+    loop {
+        if let Some(lines) = wrap_lines(text, size, TEXT_AREA_W, paint) {
+            let wrapped = lines.join("\n");
+            let img = Text2Image::from_text(
+                &wrapped,
+                size,
+                text_params!(
+                    text_align = TextAlign::Center,
+                    font_families = &["Kingnammm Maiyuan 2"],
+                    paint = paint.clone(),
+                ),
+            );
+            if img.height() <= TEXT_AREA_H {
+                return FittedText {
+                    wrapped,
+                    font_size: size,
+                };
+            }
+        }
+        if size <= MIN_FONT_SIZE + f32::EPSILON {
+            break;
         }
         size -= 1.0;
     }
-    MIN_FONT_SIZE
+    let lines = wrap_units_in(
+        &text.chars().map(|c| c.to_string()).collect::<Vec<_>>(),
+        MIN_FONT_SIZE,
+        TEXT_AREA_W,
+        paint,
+    )
+    .unwrap_or_default();
+    FittedText {
+        wrapped: lines.join("\n"),
+        font_size: MIN_FONT_SIZE,
+    }
 }
 
 fn draw_rotated_text(
@@ -74,7 +195,7 @@ fn draw_rotated_text(
     font_size: f32,
     paint: skia_safe::Paint,
 ) {
-    let text2image = Text2Image::from_text(
+    let img = Text2Image::from_text(
         text,
         font_size,
         text_params!(
@@ -83,12 +204,15 @@ fn draw_rotated_text(
             paint = paint,
         ),
     );
-    let w = text2image.longest_line();
-    let h = text2image.height();
+    let w = img.longest_line();
+    let h = img.height();
     canvas.save();
     canvas.translate((center.0, center.1));
     canvas.rotate(angle, None);
-    text2image.draw_on_canvas(canvas, (-w / 2.0, -h / 2.0));
+    img.draw_on_canvas(
+        canvas,
+        (SIGN_CENTER_OFFSET.0 - w / 2.0, SIGN_CENTER_OFFSET.1 - h / 2.0),
+    );
     canvas.restore();
 }
 
@@ -104,7 +228,7 @@ fn xixi_holdsign_2(
     };
 
     let paint = new_paint(color_from_hex_code("#f8b860"));
-    let font_size = pick_font_size(text, &paint);
+    let fitted = fit_text(text, &paint);
 
     let mut encoder = GifEncoder::new();
     let duration = 1.0 / FPS;
@@ -113,10 +237,10 @@ fn xixi_holdsign_2(
         let mut surface = frame.to_surface();
         draw_rotated_text(
             surface.canvas(),
-            text,
+            &fitted.wrapped,
             TEXT_CENTERS[i as usize],
             TEXT_ANGLES[i as usize],
-            font_size,
+            fitted.font_size,
             paint.clone(),
         );
         encoder.add_frame(surface.image_snapshot(), duration)?;
@@ -132,5 +256,5 @@ register_meme!(
     default_texts = &[DEFAULT_TEXT],
     keywords = &["西西举牌2"],
     date_created = local_date(2026, 8, 30),
-    date_modified = local_date(2026, 8, 30),
+    date_modified = local_date(2026, 8, 31),
 );
