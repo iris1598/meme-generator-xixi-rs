@@ -34,7 +34,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - uses: dtolnay/rust-toolchain@stable
+      # Pin to the exact rustc version the prebuilt meme_generator (meme.exe / 官方包)
+      # was compiled with, so cdylib trait-object vtables match at load time.
+      # Bump this together with the prebuilt engine version, never use @stable here.
+      - uses: dtolnay/rust-toolchain@1.93.1
       - uses: swatinem/rust-cache@v2
 
       - name: Rustup add target
@@ -67,7 +70,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@1.93.1
       - uses: swatinem/rust-cache@v2
 
       - name: Rustup add target
@@ -95,7 +98,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@1.93.1
       - uses: swatinem/rust-cache@v2
 
       - name: Rustup add target
