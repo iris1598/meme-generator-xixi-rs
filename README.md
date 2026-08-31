@@ -1,13 +1,16 @@
 # meme-generator-xixi
 
-`meme-generator-rs` 的额外表情仓库，提供两个表情：
+`meme-generator-rs` 的额外表情仓库，提供三个表情：
 
-| Key | 关键字 | 默认文本 |
+| Key | 关键字 | 参数 |
 | --- | --- | --- |
-| `xixi_holdsign_1` | 西西举牌、西西举牌1 | 咕噜噜-- |
-| `xixi_holdsign_2` | 西西举牌2 | 点亮语乂 |
+| `xixi_holdsign_1` | 西西举牌、西西举牌1 | 文本（默认：咕噜噜--） |
+| `xixi_holdsign_2` | 西西举牌2 | 文本（默认：点亮语乂） |
+| `xixi_goldpig` | 西西摸 | 一张图片 |
 
-两个表情都是 30 fps 的 GIF 模板，举牌会按每帧的参考位置 + 角度摆动，牌面写用户传入的文本。字体使用 `Kingnammm Maiyuan 2`（荆南麦圆体 II），文字颜色 `#f8b860`。
+举牌表情是 30 fps 的 GIF 模板，举牌会按每帧的参考位置 + 角度摆动，牌面写用户传入的文本。字体使用 `Kingnammm Maiyuan 2`（荆南麦圆体 II），文字颜色 `#f8b860`。
+
+`xixi_goldpig` 是 27 帧 16.7 fps 的 GIF 模板：左下角的圆形透明区域（半径 67px）用来放置传入的图片，图片按 `cover` 缩放填满圆窗、按 `centers.json` 里每帧的圆心 + 旋转角跟随金猪摆动，圆形区域外的手指会盖在图片上层。
 
 ## 编译
 
