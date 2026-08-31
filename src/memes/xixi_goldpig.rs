@@ -44,7 +44,7 @@ fn xixi_goldpig(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result
 
     let mut encoder = GifEncoder::new();
     let duration = 1.0 / FPS;
-    for i in 0..FRAME_NUM {
+    for i in 0..FRAME_NUM as usize {
         let frame = load_image(format!("xixi_goldpig/{i}.png"))?;
         let mut surface = new_surface(frame.dimensions());
         let canvas = surface.canvas();
