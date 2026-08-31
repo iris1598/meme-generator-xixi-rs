@@ -26,17 +26,6 @@ const CENTERS: [(f32, f32); FRAME_NUM as usize] = [
     (118.65, 250.41), (118.65, 250.41),
 ];
 
-/// Per-frame rotation of the held disc in degrees (positive = clockwise),
-/// from 素材/centers.json. The face follows the disc.
-const ANGLES: [f32; FRAME_NUM as usize] = [
-    0.0, 0.0, 0.0, 0.0, 1.0,
-    3.0, 2.0, 3.0, 4.0, 5.0,
-    4.0, 4.0, 5.0, 5.0, 6.0,
-    6.0, 6.0, 5.0, 4.0, 4.0,
-    3.0, 4.0, 6.0, 1.0, 1.0,
-    1.0, 0.0,
-];
-
 fn xixi_goldpig(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
     // Fit the face to cover the circular window (diameter x diameter), cropping
     // the source so the disc is always filled.
@@ -55,7 +44,6 @@ fn xixi_goldpig(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result
         let clip = Path::circle((cx, cy), RADIUS, None);
         canvas.clip_path(&clip, ClipOp::Intersect, true);
         canvas.translate((cx, cy));
-        canvas.rotate(ANGLES[i], None);
         canvas.draw_image(&face, (-RADIUS, -RADIUS), None);
         canvas.restore();
 
