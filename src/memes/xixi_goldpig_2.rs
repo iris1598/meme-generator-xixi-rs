@@ -1,9 +1,9 @@
-use skia_safe::{ClipOp, Color, Path};
+use skia_safe::{Color, Image};
 
 use meme_generator_core::error::Error;
 use meme_generator_utils::{
     builder::InputImage,
-    encoder::GifEncoder,
+    encoder::{make_gif_or_combined_gif, FrameAlign, GifInfo},
     image::{Fit, ImageExt},
     tools::{load_image, local_date, new_surface},
 };
@@ -25,30 +25,32 @@ const CENTERS: [(f32, f32); FRAME_NUM as usize] = [
 ];
 
 fn xixi_goldpig_2(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
-    // Fit the face to cover the circular window (diameter x diameter), cropping
-    // the source so the disc is always filled.
-    let face = images[0].image.resize_fit((2 * RADIUS as i32, 2 * RADIUS as i32), Fit::Cover);
-
-    let mut encoder = GifEncoder::new();
-    let duration = 1.0 / FPS;
-    for i in 0..FRAME_NUM as usize {
+    let func = |i: usize, face_frames: Vec<Image>| {
+        // Fit the face to cover the circular window, then mask it to a circle so it
+        // stays inside the disc. Works for both static images and animated GIFs.
+        let face = face_frames[0]
+            .resize_fit((2 * RADIUS as i32, 2 * RADIUS as i32), Fit::Cover)
+            .circle();
         let frame = load_image(format!("xixi_goldpig_2/{i}.png"))?;
         let mut surface = new_surface(frame.dimensions());
         let canvas = surface.canvas();
         canvas.clear(Color::TRANSPARENT);
 
         let (cx, cy) = CENTERS[i];
-        canvas.save();
-        let clip = Path::circle((cx, cy), RADIUS, None);
-        canvas.clip_path(&clip, ClipOp::Intersect, true);
-        canvas.translate((cx, cy));
-        canvas.draw_image(&face, (-RADIUS, -RADIUS), None);
-        canvas.restore();
-
+        canvas.draw_image(&face, (cx - RADIUS, cy - RADIUS), None);
         canvas.draw_image(&frame, (0, 0), None);
-        encoder.add_frame(surface.image_snapshot(), duration)?;
-    }
-    Ok(encoder.finish()?)
+        Ok(surface.image_snapshot())
+    };
+
+    make_gif_or_combined_gif(
+        images,
+        func,
+        GifInfo {
+            frame_num: FRAME_NUM,
+            duration: 1.0 / FPS,
+        },
+        FrameAlign::ExtendLoop,
+    )
 }
 
 register_meme!(

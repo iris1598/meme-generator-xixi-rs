@@ -6,12 +6,12 @@
 | --- | --- | --- |
 | `xixi_holdsign_1` | 西西举牌、西西举牌1 | 文本（默认：咕噜噜--） |
 | `xixi_holdsign_2` | 西西举牌2 | 文本（默认：点亮语乂） |
-| `xixi_goldpig` | 西西摸 | 一张图片 |
-| `xixi_goldpig_2` | 西西展示 | 一张图片 |
+| `xixi_goldpig` | 西西摸 | 一张图片（静图或 GIF） |
+| `xixi_goldpig_2` | 西西展示 | 一张图片（静图或 GIF） |
 
 举牌表情是 30 fps 的 GIF 模板，举牌会按每帧的参考位置 + 角度摆动，牌面写用户传入的文本。字体使用 `Kingnammm Maiyuan 2`（荆南麦圆体 II），文字颜色 `#f8b860`。
 
-`xixi_goldpig` / `xixi_goldpig_2` 是 16.7 fps 的 GIF 模板（分别 27 帧 / 18 帧）：模板里有一个圆形透明区域（半径 67px / 65px）用来放置传入的图片，图片按 `cover` 缩放填满圆窗、保持正立并跟随各自 `centers.json` 里每帧的圆心移动，圆形区域外的手指会盖在图片上层。
+`xixi_goldpig` / `xixi_goldpig_2` 是 16.7 fps 的 GIF 模板（分别 27 帧 / 18 帧）：模板里有一个圆形透明区域（半径 67px / 65px）用来放置传入的图片，图片按 `cover` 缩放、裁成圆形填满圆窗、保持正立并跟随各自 `centers.json` 里每帧的圆心移动，圆形区域外的手指会盖在图片上层。传入的图可以是静图，也可以是 GIF——GIF 会在圆内循环播放，与模板动画一起循环（`FrameAlign::ExtendLoop`）。
 
 ## 编译
 
