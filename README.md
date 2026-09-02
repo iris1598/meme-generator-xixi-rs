@@ -1,6 +1,6 @@
 # meme-generator-xixi
 
-`meme-generator-rs` 的额外表情仓库，提供四个表情：
+`meme-generator-rs` 的额外表情仓库，提供五个表情：
 
 | Key | 关键字 | 参数 |
 | --- | --- | --- |
@@ -8,6 +8,7 @@
 | `xixi_holdsign_2` | 西西举牌2 | 文本（默认：点亮语乂） |
 | `xixi_goldpig` | 西西摸 | 一张图片（静图或 GIF） |
 | `xixi_goldpig_2` | 西西展示 | 一张图片（静图或 GIF） |
+| `kurogames_iuno_say` | 尤诺说 | 文本（默认：月亮游离世间） |
 
 举牌表情是 30 fps 的 GIF 模板，举牌会按每帧的参考位置 + 角度摆动，牌面写用户传入的文本。字体使用 `Kingnammm Maiyuan 2`（荆南麦圆体 II），文字颜色 `#f8b860`。
 
@@ -30,6 +31,8 @@ cargo build --release
 ## 字体
 
 `resources/fonts/Kingnammm-Maiyuan.ttf` 是表情运行所需的字体。`meme-generator-rs` 的字体加载路径默认是 `~/.meme_generator/resources/fonts/`（可通过 `MEME_FONTS_DIR` 环境变量覆盖）。把这个 ttf 复制到那个目录里，再加载本仓库的 cdylib 就能正常出图。
+
+`kurogames_iuno_say`（尤诺说）使用 `FZShaoEr-M11S`（方正少儿简体），该字体随 `meme-generator-rs` 自带，无需额外安装。
 
 ## GitHub Actions
 
