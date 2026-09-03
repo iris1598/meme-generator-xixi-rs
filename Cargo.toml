@@ -1,6 +1,6 @@
 [package]
 name = "meme_generator_xixi"
-description = "Extra memes for meme-generator-rs: xixi_holdsign_1 / xixi_holdsign_2 / kurogames_iuno_say"
+description = "Extra memes for meme-generator-rs: xixi_holdsign_1 / xixi_holdsign_2 / xixi_holdsign_3 / xixi_holdsign_4 / kurogames_iuno_say"
 version = "0.1.0"
 authors = ["xixi <xixi@example.com>"]
 license = "MIT"

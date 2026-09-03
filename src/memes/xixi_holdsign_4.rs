@@ -18,13 +18,13 @@ const MIN_FONT_SIZE: f32 = 18.0;
 const MAX_FONT_SIZE: f32 = 40.0;
 
 /// The sign's white interior, measured from the blank template frames,
-/// expressed as the extent (in px) from the per-frame text center in the
+/// expressed as the extent (in px) from the per-frame sign center in the
 /// sign's rotated frame (u along the sign, v across it, +v down):
 /// (left, right, top, bottom).
-const SIGN_LEFT: f32 = 84.9;
-const SIGN_RIGHT: f32 = 91.1;
-const SIGN_TOP: f32 = 53.7;
-const SIGN_BOTTOM: f32 = 54.8;
+const SIGN_LEFT: f32 = 88.0;
+const SIGN_RIGHT: f32 = 88.1;
+const SIGN_TOP: f32 = 54.4;
+const SIGN_BOTTOM: f32 = 54.3;
 
 /// Margin (留白) kept between the text and the sign border.
 const SIGN_PADDING: f32 = 12.0;
@@ -34,36 +34,36 @@ const TEXT_AREA_W: f32 = SIGN_LEFT + SIGN_RIGHT - 2.0 * SIGN_PADDING;
 const TEXT_AREA_H: f32 = SIGN_TOP + SIGN_BOTTOM - 2.0 * SIGN_PADDING;
 
 /// Sign center relative to the text center in the sign's rotated frame.
-/// The reference text sat centered on the sign, so the text block is
-/// centered here.
+/// The per-frame centers are the sign centroids, so the text block is
+/// centered on the sign.
 const SIGN_CENTER_OFFSET: (f32, f32) = (
     (SIGN_RIGHT - SIGN_LEFT) / 2.0,
     (SIGN_BOTTOM - SIGN_TOP) / 2.0,
 );
 
-/// Per-frame text center (cx, cy) and sign/text rotation angle (deg), measured
-/// from the reference images. The sign is held at a near-constant tilt of about
-/// +3.94 deg, but its position in the frame shifts horizontally (a small sway
-/// in the holder's arm), so the text tracks that.
+/// Per-frame sign center (cx, cy) and the sign/text rotation angle in degrees.
+/// Derived from the reference images by detecting the white sign interior via
+/// scipy (largest connected whitish blob) and taking the per-frame centroid +
+/// PCA angle. The sign stays in roughly the same spot, wobbling gently.
 const TEXT_CENTERS: [(f32, f32); FRAME_NUM as usize] = [
-    (188.8, 91.5), (186.6, 91.6), (186.2, 91.5), (186.3, 91.5), (186.5, 91.5),
-    (187.4, 91.5), (187.9, 91.5), (187.9, 91.5), (187.2, 91.5), (187.1, 91.5),
-    (187.6, 91.6), (190.8, 91.5), (191.7, 91.5), (192.6, 91.6), (190.0, 91.5),
-    (188.6, 91.6), (187.5, 91.6), (189.5, 91.5), (191.9, 91.5), (193.0, 91.5),
-    (192.0, 91.5), (189.1, 91.5), (187.1, 91.5), (187.9, 91.5), (189.6, 91.5),
-    (191.5, 91.5), (194.4, 91.5), (193.2, 91.5), (191.8, 91.5), (187.0, 91.5),
+    (189.2, 115.7), (188.4, 115.7), (187.8, 115.2), (187.8, 115.1), (187.8, 115.1),
+    (187.3, 114.9), (187.0, 114.7), (186.7, 114.4), (184.5, 112.9), (183.9, 112.3),
+    (183.2, 111.7), (180.9, 109.0), (180.7, 108.3), (180.5, 107.6), (181.5, 105.9),
+    (182.2, 105.6), (182.9, 105.4), (185.1, 105.3), (185.9, 105.5), (186.5, 105.8),
+    (188.4, 107.1), (188.6, 107.6), (189.2, 108.1), (190.2, 110.2), (190.5, 111.3),
+    (190.7, 112.0), (190.7, 114.1), (190.5, 114.7), (190.4, 115.1), (189.1, 115.7),
 ];
 
 const TEXT_ANGLES: [f32; FRAME_NUM as usize] = [
-    3.96, 3.97, 3.93, 3.94, 3.99,
-    3.92, 3.95, 3.95, 3.93, 3.91,
-    3.94, 3.94, 3.94, 3.96, 3.93,
-    3.95, 3.94, 3.92, 3.95, 3.94,
-    3.91, 3.89, 3.92, 3.96, 3.94,
-    3.94, 3.93, 3.91, 3.95, 3.91,
+        2.53,    2.21,    1.91,    1.91,    1.88,
+        1.59,    1.47,    1.20,   -0.12,   -0.41,
+       -1.05,   -2.84,   -3.07,   -3.38,   -3.63,
+       -3.48,   -3.24,   -2.28,   -1.88,   -1.45,
+       -0.45,    0.13,    0.60,    1.65,    2.09,
+        2.29,    2.83,    2.90,    2.87,    2.48,
 ];
 
-const DEFAULT_TEXT: &str = "点亮语义";
+const DEFAULT_TEXT: &str = "QAQ";
 
 fn measure_width(text: &str, size: f32, paint: &skia_safe::Paint) -> f32 {
     Text2Image::from_text(
@@ -216,7 +216,7 @@ fn draw_rotated_text(
     canvas.restore();
 }
 
-fn xixi_holdsign_2(
+fn xixi_holdsign_4(
     _: Vec<InputImage>,
     texts: Vec<String>,
     _: NoOptions,
@@ -233,7 +233,7 @@ fn xixi_holdsign_2(
     let mut encoder = GifEncoder::new();
     let duration = 1.0 / FPS;
     for i in 0..FRAME_NUM {
-        let frame = load_image(format!("xixi_holdsign_2/{i}.png"))?;
+        let frame = load_image(format!("xixi_holdsign_4/{i}.png"))?;
         let mut surface = frame.to_surface();
         draw_rotated_text(
             surface.canvas(),
@@ -249,12 +249,12 @@ fn xixi_holdsign_2(
 }
 
 register_meme!(
-    "xixi_holdsign_2",
-    xixi_holdsign_2,
+    "xixi_holdsign_4",
+    xixi_holdsign_4,
     min_texts = 0,
     max_texts = 1,
     default_texts = &[DEFAULT_TEXT],
-    keywords = &["西西举牌2"],
-    date_created = local_date(2026, 8, 30),
+    keywords = &["西西举牌4"],
+    date_created = local_date(2026, 9, 3),
     date_modified = local_date(2026, 9, 3),
 );

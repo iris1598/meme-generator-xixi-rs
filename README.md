@@ -1,11 +1,13 @@
 # meme-generator-xixi
 
-`meme-generator-rs` 的额外表情仓库，提供五个表情：
+`meme-generator-rs` 的额外表情仓库，提供七个表情：
 
 | Key | 关键字 | 参数 |
 | --- | --- | --- |
 | `xixi_holdsign_1` | 西西举牌、西西举牌1 | 文本（默认：咕噜噜--） |
-| `xixi_holdsign_2` | 西西举牌2 | 文本（默认：点亮语乂） |
+| `xixi_holdsign_2` | 西西举牌2 | 文本（默认：点亮语义） |
+| `xixi_holdsign_3` | 西西举牌3 | 文本（默认：呜呜呜--） |
+| `xixi_holdsign_4` | 西西举牌4 | 文本（默认：QAQ） |
 | `xixi_goldpig` | 西西摸 | 一张图片（静图或 GIF） |
 | `xixi_goldpig_2` | 西西展示 | 一张图片（静图或 GIF） |
 | `kurogames_iuno_say` | 尤诺说 | 文本（默认：月亮游离世间） |
