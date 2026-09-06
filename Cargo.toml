@@ -1,6 +1,6 @@
 [package]
 name = "meme_generator_xixi"
-description = "Extra memes for meme-generator-rs: Sigrika_signholding1-6 / denia_jupai_1-6 / am_jupai_1-6 / xixi_goldpig / xixi_goldpig_2 / kurogames_iuno_say"
+description = "Extra memes for meme-generator-rs: xixi_holdsign_1-6 / yaya_holdsign_1-6 / ams_holdsign_1-6 / xixi_goldpig / xixi_goldpig_2 / kurogames_iuno_say"
 version = "0.1.0"
 authors = ["xixi <xixi@example.com>"]
 license = "MIT"
@@ -16,8 +16,6 @@ crate-type = ["cdylib"]
 inventory = "0.3"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-unicode-properties = "0.1"
-unicode-width = "0.2"
 skia-safe = { version = "0.93", features = ["textlayout"] }
 
 meme_generator_core = "0.0.5"

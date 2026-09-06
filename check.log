@@ -1,0 +1,7 @@
+﻿cargo :    Compiling skia-bindings v0.93.1
+所在位置 行:1 字符: 1
++ cargo check --offline --message-format=short *>&1 | Out-File -Encodin ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (   Compiling skia-bindings v0.93.1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

@@ -1,0 +1,5594 @@
+{
+  "blink": [
+    {
+      "corners": [
+        [
+          271.839,
+          160.309
+        ],
+        [
+          96.514,
+          143.338
+        ],
+        [
+          106.996,
+          35.084
+        ],
+        [
+          282.319,
+          52.065
+        ]
+      ],
+      "center": [
+        189.417,
+        97.701
+      ],
+      "angle_deg": 5.529,
+      "width": 176.143,
+      "height": 108.75,
+      "pixel_count": 18895,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          271.839,
+          160.309
+        ],
+        [
+          96.514,
+          143.338
+        ],
+        [
+          106.993,
+          35.094
+        ],
+        [
+          282.317,
+          52.065
+        ]
+      ],
+      "center": [
+        189.416,
+        97.701
+      ],
+      "angle_deg": 5.529,
+      "width": 176.143,
+      "height": 108.75,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          271.828,
+          160.309
+        ],
+        [
+          96.514,
+          143.338
+        ],
+        [
+          106.993,
+          35.094
+        ],
+        [
+          282.317,
+          52.034
+        ]
+      ],
+      "center": [
+        189.416,
+        97.686
+      ],
+      "angle_deg": 5.529,
+      "width": 176.135,
+      "height": 108.782,
+      "pixel_count": 18893,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          271.211,
+          159.54
+        ],
+        [
+          95.857,
+          143.487
+        ],
+        [
+          105.779,
+          35.107
+        ],
+        [
+          281.133,
+          51.16
+        ]
+      ],
+      "center": [
+        188.495,
+        97.323
+      ],
+      "angle_deg": 5.231,
+      "width": 176.14,
+      "height": 108.834,
+      "pixel_count": 18881,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          270.942,
+          159.182
+        ],
+        [
+          95.526,
+          143.74
+        ],
+        [
+          105.076,
+          35.26
+        ],
+        [
+          280.491,
+          50.702
+        ]
+      ],
+      "center": [
+        188.009,
+        97.221
+      ],
+      "angle_deg": 5.031,
+      "width": 176.094,
+      "height": 108.834,
+      "pixel_count": 18897,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          270.615,
+          158.634
+        ],
+        [
+          95.083,
+          144.008
+        ],
+        [
+          104.124,
+          35.511
+        ],
+        [
+          279.655,
+          50.137
+        ]
+      ],
+      "center": [
+        187.369,
+        97.072
+      ],
+      "angle_deg": 4.763,
+      "width": 176.09,
+      "height": 108.834,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          270.146,
+          158.02
+        ],
+        [
+          94.587,
+          144.349
+        ],
+        [
+          103.031,
+          35.916
+        ],
+        [
+          278.59,
+          49.587
+        ]
+      ],
+      "center": [
+        186.588,
+        96.968
+      ],
+      "angle_deg": 4.453,
+      "width": 176.094,
+      "height": 108.853,
+      "pixel_count": 18898,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          268.572,
+          155.804
+        ],
+        [
+          92.781,
+          146.049
+        ],
+        [
+          98.811,
+          37.384
+        ],
+        [
+          274.602,
+          47.138
+        ]
+      ],
+      "center": [
+        183.691,
+        96.954
+      ],
+      "angle_deg": 3.176,
+      "width": 176.09,
+      "height": 108.833,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          268.312,
+          154.756
+        ],
+        [
+          92.256,
+          147.095
+        ],
+        [
+          96.989,
+          38.344
+        ],
+        [
+          273.044,
+          46.005
+        ]
+      ],
+      "center": [
+        182.65,
+        96.954
+      ],
+      "angle_deg": 2.492,
+      "width": 176.066,
+      "height": 108.761,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          267.535,
+          153.426
+        ],
+        [
+          91.484,
+          149.037
+        ],
+        [
+          94.008,
+          40.482
+        ],
+        [
+          270.001,
+          44.87
+        ]
+      ],
+      "center": [
+        180.651,
+        96.954
+      ],
+      "angle_deg": 1.428,
+      "width": 176.061,
+      "height": 108.59,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          267.535,
+          153.287
+        ],
+        [
+          91.484,
+          154.016
+        ],
+        [
+          90.452,
+          45.521
+        ],
+        [
+          266.77,
+          44.814
+        ]
+      ],
+      "center": [
+        179.532,
+        98.962
+      ],
+      "angle_deg": -0.237,
+      "width": 176.066,
+      "height": 108.59,
+      "pixel_count": 18931,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          267.535,
+          153.287
+        ],
+        [
+          91.484,
+          154.862
+        ],
+        [
+          90.452,
+          46.491
+        ],
+        [
+          266.77,
+          44.814
+        ]
+      ],
+      "center": [
+        179.532,
+        99.838
+      ],
+      "angle_deg": -0.513,
+      "width": 176.059,
+      "height": 108.499,
+      "pixel_count": 18893,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          268.622,
+          153.287
+        ],
+        [
+          92.294,
+          156.289
+        ],
+        [
+          90.452,
+          47.474
+        ],
+        [
+          266.77,
+          44.814
+        ]
+      ],
+      "center": [
+        179.532,
+        100.38
+      ],
+      "angle_deg": -0.975,
+      "width": 176.059,
+      "height": 108.376,
+      "pixel_count": 18916,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          272.316,
+          157.921
+        ],
+        [
+          97.037,
+          158.492
+        ],
+        [
+          96.684,
+          50.249
+        ],
+        [
+          271.963,
+          49.677
+        ]
+      ],
+      "center": [
+        184.5,
+        104.085
+      ],
+      "angle_deg": -0.187,
+      "width": 176.044,
+      "height": 108.345,
+      "pixel_count": 18877,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          273.929,
+          159.754
+        ],
+        [
+          98.454,
+          158.773
+        ],
+        [
+          99.059,
+          50.308
+        ],
+        [
+          274.534,
+          51.411
+        ]
+      ],
+      "center": [
+        186.494,
+        105.092
+      ],
+      "angle_deg": 0.32,
+      "width": 176.044,
+      "height": 108.345,
+      "pixel_count": 18893,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          275.657,
+          160.951
+        ],
+        [
+          99.62,
+          158.773
+        ],
+        [
+          100.526,
+          50.308
+        ],
+        [
+          276.564,
+          52.624
+        ]
+      ],
+      "center": [
+        188.092,
+        106.051
+      ],
+      "angle_deg": 0.709,
+      "width": 176.044,
+      "height": 108.345,
+      "pixel_count": 18907,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          281.954,
+          168.987
+        ],
+        [
+          106.092,
+          158.773
+        ],
+        [
+          112.256,
+          50.308
+        ],
+        [
+          288.118,
+          60.28
+        ]
+      ],
+      "center": [
+        197.105,
+        109.648
+      ],
+      "angle_deg": 3.324,
+      "width": 176.095,
+      "height": 108.827,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          282.843,
+          170.281
+        ],
+        [
+          107.142,
+          158.521
+        ],
+        [
+          114.41,
+          49.936
+        ],
+        [
+          290.111,
+          61.697
+        ]
+      ],
+      "center": [
+        198.627,
+        110.109
+      ],
+      "angle_deg": 3.829,
+      "width": 176.108,
+      "height": 108.827,
+      "pixel_count": 18900,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          283.654,
+          171.452
+        ],
+        [
+          108.067,
+          157.914
+        ],
+        [
+          116.434,
+          49.403
+        ],
+        [
+          292.021,
+          62.941
+        ]
+      ],
+      "center": [
+        200.044,
+        110.427
+      ],
+      "angle_deg": 4.409,
+      "width": 176.108,
+      "height": 108.827,
+      "pixel_count": 18888,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          284.336,
+          172.558
+        ],
+        [
+          108.871,
+          157.373
+        ],
+        [
+          118.252,
+          48.973
+        ],
+        [
+          293.717,
+          64.159
+        ]
+      ],
+      "center": [
+        201.294,
+        110.427
+      ],
+      "angle_deg": 4.946,
+      "width": 176.104,
+      "height": 108.827,
+      "pixel_count": 18907,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          285.376,
+          175.903
+        ],
+        [
+          110.967,
+          153.429
+        ],
+        [
+          124.979,
+          45.543
+        ],
+        [
+          299.602,
+          68.017
+        ]
+      ],
+      "center": [
+        205.348,
+        110.427
+      ],
+      "angle_deg": 7.343,
+      "width": 176.108,
+      "height": 108.805,
+      "pixel_count": 18896,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          285.376,
+          176.034
+        ],
+        [
+          110.967,
+          152.574
+        ],
+        [
+          125.676,
+          44.702
+        ],
+        [
+          300.204,
+          68.205
+        ]
+      ],
+      "center": [
+        205.655,
+        110.389
+      ],
+      "angle_deg": 7.661,
+      "width": 176.104,
+      "height": 108.776,
+      "pixel_count": 18892,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          285.376,
+          176.034
+        ],
+        [
+          110.967,
+          151.649
+        ],
+        [
+          125.676,
+          43.932
+        ],
+        [
+          300.204,
+          68.205
+        ]
+      ],
+      "center": [
+        205.655,
+        110.042
+      ],
+      "angle_deg": 7.959,
+      "width": 176.1,
+      "height": 108.776,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          285.003,
+          176.034
+        ],
+        [
+          110.72,
+          150.795
+        ],
+        [
+          125.676,
+          43.156
+        ],
+        [
+          300.204,
+          68.205
+        ]
+      ],
+      "center": [
+        205.655,
+        109.595
+      ],
+      "angle_deg": 8.24,
+      "width": 176.1,
+      "height": 108.787,
+      "pixel_count": 18896,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          281.44,
+          172.697
+        ],
+        [
+          107.321,
+          146.733
+        ],
+        [
+          123.374,
+          39.083
+        ],
+        [
+          297.493,
+          65.046
+        ]
+      ],
+      "center": [
+        202.407,
+        105.89
+      ],
+      "angle_deg": 8.481,
+      "width": 176.097,
+      "height": 108.787,
+      "pixel_count": 18892,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          280.525,
+          171.518
+        ],
+        [
+          106.273,
+          146.099
+        ],
+        [
+          121.976,
+          38.451
+        ],
+        [
+          296.228,
+          63.87
+        ]
+      ],
+      "center": [
+        201.251,
+        104.985
+      ],
+      "angle_deg": 8.299,
+      "width": 176.097,
+      "height": 108.79,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          279.368,
+          170.372
+        ],
+        [
+          105.05,
+          145.401
+        ],
+        [
+          120.491,
+          37.608
+        ],
+        [
+          294.809,
+          62.579
+        ]
+      ],
+      "center": [
+        199.93,
+        103.99
+      ],
+      "angle_deg": 8.152,
+      "width": 176.096,
+      "height": 108.84,
+      "pixel_count": 18888,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          278.259,
+          168.997
+        ],
+        [
+          103.791,
+          144.79
+        ],
+        [
+          118.742,
+          37.032
+        ],
+        [
+          293.21,
+          61.239
+        ]
+      ],
+      "center": [
+        198.501,
+        103.014
+      ],
+      "angle_deg": 7.899,
+      "width": 176.097,
+      "height": 108.79,
+      "pixel_count": 18899,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          272.736,
+          161.803
+        ],
+        [
+          97.667,
+          143.327
+        ],
+        [
+          109.111,
+          35.084
+        ],
+        [
+          284.18,
+          53.533
+        ]
+      ],
+      "center": [
+        190.923,
+        98.415
+      ],
+      "angle_deg": 6.024,
+      "width": 176.097,
+      "height": 108.873,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          272.736,
+          161.803
+        ],
+        [
+          97.667,
+          143.327
+        ],
+        [
+          109.111,
+          35.084
+        ],
+        [
+          284.18,
+          53.533
+        ]
+      ],
+      "center": [
+        190.923,
+        98.415
+      ],
+      "angle_deg": 6.024,
+      "width": 176.135,
+      "height": 108.79,
+      "pixel_count": 18895,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ],
+  "hongwen": [
+    {
+      "corners": [
+        [
+          273.791,
+          152.71
+        ],
+        [
+          98.035,
+          140.269
+        ],
+        [
+          105.721,
+          31.68
+        ],
+        [
+          281.478,
+          44.121
+        ]
+      ],
+      "center": [
+        189.756,
+        92.195
+      ],
+      "angle_deg": 4.049,
+      "width": 176.196,
+      "height": 108.86,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          273.791,
+          152.71
+        ],
+        [
+          98.035,
+          140.269
+        ],
+        [
+          105.721,
+          31.68
+        ],
+        [
+          281.478,
+          44.121
+        ]
+      ],
+      "center": [
+        189.756,
+        92.195
+      ],
+      "angle_deg": 4.049,
+      "width": 176.196,
+      "height": 108.86,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          273.791,
+          152.643
+        ],
+        [
+          98.035,
+          140.291
+        ],
+        [
+          105.721,
+          31.687
+        ],
+        [
+          281.478,
+          44.039
+        ]
+      ],
+      "center": [
+        189.756,
+        92.178
+      ],
+      "angle_deg": 4.02,
+      "width": 176.144,
+      "height": 108.872,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          274.261,
+          152.66
+        ],
+        [
+          98.551,
+          140.291
+        ],
+        [
+          106.185,
+          31.687
+        ],
+        [
+          281.895,
+          44.054
+        ]
+      ],
+      "center": [
+        190.223,
+        92.195
+      ],
+      "angle_deg": 4.027,
+      "width": 176.144,
+      "height": 108.872,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          274.448,
+          152.66
+        ],
+        [
+          98.748,
+          140.291
+        ],
+        [
+          106.349,
+          31.687
+        ],
+        [
+          282.048,
+          44.054
+        ]
+      ],
+      "center": [
+        190.398,
+        92.195
+      ],
+      "angle_deg": 4.027,
+      "width": 176.144,
+      "height": 108.872,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          274.709,
+          152.66
+        ],
+        [
+          99.012,
+          140.334
+        ],
+        [
+          106.632,
+          31.726
+        ],
+        [
+          282.329,
+          44.054
+        ]
+      ],
+      "center": [
+        190.671,
+        92.196
+      ],
+      "angle_deg": 4.013,
+      "width": 176.129,
+      "height": 108.873,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          274.709,
+          152.66
+        ],
+        [
+          99.012,
+          140.335
+        ],
+        [
+          106.632,
+          31.73
+        ],
+        [
+          282.329,
+          44.054
+        ]
+      ],
+      "center": [
+        190.671,
+        92.196
+      ],
+      "angle_deg": 4.013,
+      "width": 176.128,
+      "height": 108.873,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          274.709,
+          152.66
+        ],
+        [
+          99.012,
+          140.339
+        ],
+        [
+          106.632,
+          31.733
+        ],
+        [
+          282.329,
+          44.054
+        ]
+      ],
+      "center": [
+        190.671,
+        92.196
+      ],
+      "angle_deg": 4.011,
+      "width": 176.128,
+      "height": 108.873,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          274.709,
+          152.663
+        ],
+        [
+          99.012,
+          140.335
+        ],
+        [
+          106.633,
+          31.73
+        ],
+        [
+          282.329,
+          44.057
+        ]
+      ],
+      "center": [
+        190.671,
+        92.193
+      ],
+      "angle_deg": 4.014,
+      "width": 176.128,
+      "height": 108.873,
+      "pixel_count": 18901,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          274.709,
+          152.658
+        ],
+        [
+          99.012,
+          140.335
+        ],
+        [
+          106.633,
+          31.73
+        ],
+        [
+          282.329,
+          44.057
+        ]
+      ],
+      "center": [
+        190.671,
+        92.185
+      ],
+      "angle_deg": 4.012,
+      "width": 176.126,
+      "height": 108.873,
+      "pixel_count": 18901,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          274.751,
+          152.658
+        ],
+        [
+          99.05,
+          140.291
+        ],
+        [
+          106.716,
+          31.697
+        ],
+        [
+          282.417,
+          44.058
+        ]
+      ],
+      "center": [
+        190.733,
+        92.185
+      ],
+      "angle_deg": 4.026,
+      "width": 176.126,
+      "height": 108.87,
+      "pixel_count": 18907,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          279.166,
+          152.658
+        ],
+        [
+          103.476,
+          140.291
+        ],
+        [
+          111.142,
+          31.697
+        ],
+        [
+          286.831,
+          44.058
+        ]
+      ],
+      "center": [
+        195.154,
+        92.19
+      ],
+      "angle_deg": 4.026,
+      "width": 176.139,
+      "height": 108.87,
+      "pixel_count": 18907,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          279.166,
+          152.687
+        ],
+        [
+          103.476,
+          140.288
+        ],
+        [
+          111.142,
+          31.697
+        ],
+        [
+          286.831,
+          44.096
+        ]
+      ],
+      "center": [
+        195.154,
+        92.193
+      ],
+      "angle_deg": 4.037,
+      "width": 176.139,
+      "height": 108.87,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          279.166,
+          152.658
+        ],
+        [
+          103.476,
+          140.291
+        ],
+        [
+          111.142,
+          31.699
+        ],
+        [
+          286.831,
+          44.058
+        ]
+      ],
+      "center": [
+        195.154,
+        92.19
+      ],
+      "angle_deg": 4.026,
+      "width": 176.137,
+      "height": 108.87,
+      "pixel_count": 18902,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          278.752,
+          152.64
+        ],
+        [
+          103.052,
+          140.291
+        ],
+        [
+          110.715,
+          31.699
+        ],
+        [
+          286.415,
+          44.035
+        ]
+      ],
+      "center": [
+        194.733,
+        92.19
+      ],
+      "angle_deg": 4.02,
+      "width": 176.139,
+      "height": 108.872,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          276.337,
+          152.64
+        ],
+        [
+          100.644,
+          140.304
+        ],
+        [
+          108.271,
+          31.699
+        ],
+        [
+          283.964,
+          44.035
+        ]
+      ],
+      "center": [
+        192.304,
+        92.17
+      ],
+      "angle_deg": 4.016,
+      "width": 176.137,
+      "height": 108.872,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          276.337,
+          152.642
+        ],
+        [
+          100.644,
+          140.288
+        ],
+        [
+          108.271,
+          31.699
+        ],
+        [
+          283.964,
+          44.037
+        ]
+      ],
+      "center": [
+        192.304,
+        92.17
+      ],
+      "angle_deg": 4.022,
+      "width": 176.137,
+      "height": 108.872,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          276.337,
+          152.642
+        ],
+        [
+          100.644,
+          140.276
+        ],
+        [
+          108.271,
+          31.677
+        ],
+        [
+          283.964,
+          44.037
+        ]
+      ],
+      "center": [
+        192.304,
+        92.17
+      ],
+      "angle_deg": 4.026,
+      "width": 176.154,
+      "height": 108.872,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          277.746,
+          152.642
+        ],
+        [
+          102.032,
+          140.265
+        ],
+        [
+          109.723,
+          31.672
+        ],
+        [
+          285.437,
+          44.04
+        ]
+      ],
+      "center": [
+        193.734,
+        92.17
+      ],
+      "angle_deg": 4.029,
+      "width": 176.179,
+      "height": 108.871,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          277.746,
+          152.642
+        ],
+        [
+          102.032,
+          140.256
+        ],
+        [
+          109.723,
+          31.658
+        ],
+        [
+          285.437,
+          44.04
+        ]
+      ],
+      "center": [
+        193.734,
+        92.17
+      ],
+      "angle_deg": 4.032,
+      "width": 176.179,
+      "height": 108.871,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          277.746,
+          152.642
+        ],
+        [
+          102.032,
+          140.256
+        ],
+        [
+          109.723,
+          31.658
+        ],
+        [
+          285.437,
+          44.04
+        ]
+      ],
+      "center": [
+        193.734,
+        92.17
+      ],
+      "angle_deg": 4.032,
+      "width": 176.179,
+      "height": 108.871,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          277.169,
+          152.642
+        ],
+        [
+          101.467,
+          140.256
+        ],
+        [
+          109.128,
+          31.658
+        ],
+        [
+          284.83,
+          44.04
+        ]
+      ],
+      "center": [
+        193.149,
+        92.158
+      ],
+      "angle_deg": 4.032,
+      "width": 176.179,
+      "height": 108.871,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          277.169,
+          152.642
+        ],
+        [
+          101.467,
+          140.261
+        ],
+        [
+          109.128,
+          31.66
+        ],
+        [
+          284.83,
+          44.04
+        ]
+      ],
+      "center": [
+        193.149,
+        92.158
+      ],
+      "angle_deg": 4.031,
+      "width": 176.139,
+      "height": 108.871,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          277.169,
+          152.642
+        ],
+        [
+          101.467,
+          140.279
+        ],
+        [
+          109.128,
+          31.675
+        ],
+        [
+          284.83,
+          44.037
+        ]
+      ],
+      "center": [
+        193.149,
+        92.158
+      ],
+      "angle_deg": 4.025,
+      "width": 176.128,
+      "height": 108.872,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          278.712,
+          152.642
+        ],
+        [
+          103.015,
+          140.279
+        ],
+        [
+          110.632,
+          31.675
+        ],
+        [
+          286.329,
+          44.037
+        ]
+      ],
+      "center": [
+        194.672,
+        92.158
+      ],
+      "angle_deg": 4.025,
+      "width": 176.128,
+      "height": 108.872,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          278.712,
+          152.639
+        ],
+        [
+          103.015,
+          140.279
+        ],
+        [
+          110.632,
+          31.675
+        ],
+        [
+          286.329,
+          44.037
+        ]
+      ],
+      "center": [
+        194.672,
+        92.158
+      ],
+      "angle_deg": 4.024,
+      "width": 176.128,
+      "height": 108.872,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          278.712,
+          152.639
+        ],
+        [
+          103.015,
+          140.279
+        ],
+        [
+          110.632,
+          31.682
+        ],
+        [
+          286.329,
+          44.037
+        ]
+      ],
+      "center": [
+        194.672,
+        92.175
+      ],
+      "angle_deg": 4.024,
+      "width": 176.128,
+      "height": 108.872,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          277.394,
+          152.626
+        ],
+        [
+          101.718,
+          140.279
+        ],
+        [
+          109.306,
+          31.682
+        ],
+        [
+          284.982,
+          44.021
+        ]
+      ],
+      "center": [
+        193.35,
+        92.175
+      ],
+      "angle_deg": 4.02,
+      "width": 176.128,
+      "height": 108.872,
+      "pixel_count": 18902,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          275.816,
+          152.639
+        ],
+        [
+          100.102,
+          140.27
+        ],
+        [
+          107.793,
+          31.682
+        ],
+        [
+          283.507,
+          44.037
+        ]
+      ],
+      "center": [
+        191.805,
+        92.185
+      ],
+      "angle_deg": 4.027,
+      "width": 176.154,
+      "height": 108.871,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          275.816,
+          152.617
+        ],
+        [
+          100.102,
+          140.343
+        ],
+        [
+          107.793,
+          31.734
+        ],
+        [
+          283.507,
+          44.007
+        ]
+      ],
+      "center": [
+        191.805,
+        92.185
+      ],
+      "angle_deg": 3.996,
+      "width": 176.11,
+      "height": 108.874,
+      "pixel_count": 18901,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ],
+  "kaixin": [
+    {
+      "corners": [
+        [
+          221.2,
+          157.212
+        ],
+        [
+          45.234,
+          152.036
+        ],
+        [
+          48.431,
+          43.336
+        ],
+        [
+          224.397,
+          48.512
+        ]
+      ],
+      "center": [
+        134.816,
+        100.274
+      ],
+      "angle_deg": 1.685,
+      "width": 176.042,
+      "height": 108.747,
+      "pixel_count": 18876,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          221.2,
+          157.212
+        ],
+        [
+          45.234,
+          152.036
+        ],
+        [
+          48.431,
+          43.336
+        ],
+        [
+          224.397,
+          48.512
+        ]
+      ],
+      "center": [
+        134.816,
+        100.274
+      ],
+      "angle_deg": 1.685,
+      "width": 176.042,
+      "height": 108.747,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          221.2,
+          157.226
+        ],
+        [
+          45.234,
+          152.036
+        ],
+        [
+          48.431,
+          43.336
+        ],
+        [
+          224.397,
+          48.542
+        ]
+      ],
+      "center": [
+        134.816,
+        100.274
+      ],
+      "angle_deg": 1.689,
+      "width": 176.045,
+      "height": 108.723,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          220.897,
+          157.226
+        ],
+        [
+          44.862,
+          152.555
+        ],
+        [
+          47.747,
+          43.87
+        ],
+        [
+          223.782,
+          48.542
+        ]
+      ],
+      "center": [
+        134.322,
+        100.548
+      ],
+      "angle_deg": 1.52,
+      "width": 176.045,
+      "height": 108.723,
+      "pixel_count": 18879,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          220.586,
+          157.286
+        ],
+        [
+          44.598,
+          152.829
+        ],
+        [
+          47.355,
+          44.365
+        ],
+        [
+          223.343,
+          48.759
+        ]
+      ],
+      "center": [
+        133.97,
+        100.834
+      ],
+      "angle_deg": 1.451,
+      "width": 176.065,
+      "height": 108.723,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          220.227,
+          157.303
+        ],
+        [
+          44.181,
+          153.349
+        ],
+        [
+          46.608,
+          44.822
+        ],
+        [
+          222.654,
+          48.761
+        ]
+      ],
+      "center": [
+        133.417,
+        101.054
+      ],
+      "angle_deg": 1.287,
+      "width": 176.065,
+      "height": 108.554,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          219.628,
+          157.557
+        ],
+        [
+          43.598,
+          154.026
+        ],
+        [
+          45.78,
+          45.231
+        ],
+        [
+          221.81,
+          48.839
+        ]
+      ],
+      "center": [
+        132.704,
+        101.394
+      ],
+      "angle_deg": 1.149,
+      "width": 176.045,
+      "height": 108.532,
+      "pixel_count": 18892,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          215.118,
+          159.436
+        ],
+        [
+          39.146,
+          161.498
+        ],
+        [
+          37.875,
+          52.974
+        ],
+        [
+          213.847,
+          50.912
+        ]
+      ],
+      "center": [
+        126.497,
+        106.205
+      ],
+      "angle_deg": -0.671,
+      "width": 176.042,
+      "height": 108.554,
+      "pixel_count": 18863,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          213.857,
+          160.702
+        ],
+        [
+          37.838,
+          163.563
+        ],
+        [
+          36.075,
+          55.121
+        ],
+        [
+          212.094,
+          52.259
+        ]
+      ],
+      "center": [
+        124.966,
+        107.911
+      ],
+      "angle_deg": -0.931,
+      "width": 176.042,
+      "height": 108.645,
+      "pixel_count": 18856,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          212.848,
+          161.551
+        ],
+        [
+          36.886,
+          165.867
+        ],
+        [
+          34.218,
+          57.129
+        ],
+        [
+          210.18,
+          52.812
+        ]
+      ],
+      "center": [
+        123.533,
+        109.34
+      ],
+      "angle_deg": -1.405,
+      "width": 176.042,
+      "height": 108.645,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          212.562,
+          162.342
+        ],
+        [
+          36.718,
+          168.256
+        ],
+        [
+          32.468,
+          59.673
+        ],
+        [
+          208.42,
+          53.759
+        ]
+      ],
+      "center": [
+        122.269,
+        111.008
+      ],
+      "angle_deg": -1.926,
+      "width": 176.052,
+      "height": 108.676,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          212.562,
+          166.968
+        ],
+        [
+          36.718,
+          176.943
+        ],
+        [
+          32.074,
+          68.441
+        ],
+        [
+          207.87,
+          58.466
+        ]
+      ],
+      "center": [
+        122.269,
+        117.704
+      ],
+      "angle_deg": -3.247,
+      "width": 176.052,
+      "height": 108.676,
+      "pixel_count": 18888,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          212.562,
+          167.785
+        ],
+        [
+          36.718,
+          177.593
+        ],
+        [
+          32.074,
+          68.983
+        ],
+        [
+          207.87,
+          59.175
+        ]
+      ],
+      "center": [
+        122.269,
+        118.384
+      ],
+      "angle_deg": -3.192,
+      "width": 176.114,
+      "height": 108.676,
+      "pixel_count": 18887,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          213.709,
+          168.495
+        ],
+        [
+          37.913,
+          177.593
+        ],
+        [
+          32.074,
+          68.983
+        ],
+        [
+          207.87,
+          60.002
+        ]
+      ],
+      "center": [
+        122.891,
+        118.384
+      ],
+      "angle_deg": -2.963,
+      "width": 176.114,
+      "height": 108.676,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          215.178,
+          169.117
+        ],
+        [
+          39.264,
+          177.593
+        ],
+        [
+          33.872,
+          68.983
+        ],
+        [
+          209.785,
+          60.541
+        ]
+      ],
+      "center": [
+        124.525,
+        118.384
+      ],
+      "angle_deg": -2.759,
+      "width": 176.051,
+      "height": 108.65,
+      "pixel_count": 18886,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          224.362,
+          170.983
+        ],
+        [
+          48.394,
+          173.49
+        ],
+        [
+          46.945,
+          65.002
+        ],
+        [
+          222.914,
+          62.652
+        ]
+      ],
+      "center": [
+        135.654,
+        118.071
+      ],
+      "angle_deg": -0.816,
+      "width": 176.018,
+      "height": 108.572,
+      "pixel_count": 18870,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          226.118,
+          171.141
+        ],
+        [
+          50.1,
+          171.209
+        ],
+        [
+          49.962,
+          63.113
+        ],
+        [
+          225.979,
+          62.887
+        ]
+      ],
+      "center": [
+        138.04,
+        117.048
+      ],
+      "angle_deg": -0.022,
+      "width": 176.018,
+      "height": 108.498,
+      "pixel_count": 18859,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          227.882,
+          171.141
+        ],
+        [
+          52.067,
+          170.365
+        ],
+        [
+          53.129,
+          61.798
+        ],
+        [
+          228.944,
+          62.887
+        ]
+      ],
+      "center": [
+        140.505,
+        116.941
+      ],
+      "angle_deg": 0.253,
+      "width": 176.018,
+      "height": 108.498,
+      "pixel_count": 18919,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          230.37,
+          170.983
+        ],
+        [
+          54.347,
+          169.25
+        ],
+        [
+          55.605,
+          60.87
+        ],
+        [
+          231.628,
+          62.887
+        ]
+      ],
+      "center": [
+        142.987,
+        116.081
+      ],
+      "angle_deg": 0.564,
+      "width": 176.035,
+      "height": 108.572,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          237.885,
+          170.661
+        ],
+        [
+          62.075,
+          160.403
+        ],
+        [
+          68.41,
+          51.831
+        ],
+        [
+          244.22,
+          62.089
+        ]
+      ],
+      "center": [
+        153.148,
+        111.246
+      ],
+      "angle_deg": 3.339,
+      "width": 176.044,
+      "height": 108.729,
+      "pixel_count": 18879,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          238.888,
+          170.25
+        ],
+        [
+          63.225,
+          158.68
+        ],
+        [
+          70.377,
+          50.097
+        ],
+        [
+          246.04,
+          61.667
+        ]
+      ],
+      "center": [
+        154.632,
+        110.173
+      ],
+      "angle_deg": 3.768,
+      "width": 176.044,
+      "height": 108.757,
+      "pixel_count": 18882,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          239.723,
+          169.712
+        ],
+        [
+          64.136,
+          157.001
+        ],
+        [
+          71.987,
+          48.556
+        ],
+        [
+          247.573,
+          61.267
+        ]
+      ],
+      "center": [
+        155.855,
+        109.134
+      ],
+      "angle_deg": 4.141,
+      "width": 176.046,
+      "height": 108.764,
+      "pixel_count": 18881,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          239.723,
+          169.156
+        ],
+        [
+          64.136,
+          155.405
+        ],
+        [
+          73.334,
+          46.974
+        ],
+        [
+          248.824,
+          60.725
+        ]
+      ],
+      "center": [
+        156.761,
+        108.065
+      ],
+      "angle_deg": 4.478,
+      "width": 176.046,
+      "height": 108.807,
+      "pixel_count": 18882,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          239.723,
+          165.55
+        ],
+        [
+          64.136,
+          149.088
+        ],
+        [
+          73.334,
+          40.729
+        ],
+        [
+          248.824,
+          57.19
+        ]
+      ],
+      "center": [
+        156.761,
+        103.139
+      ],
+      "angle_deg": 5.356,
+      "width": 176.046,
+      "height": 108.764,
+      "pixel_count": 18882,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          239.374,
+          164.689
+        ],
+        [
+          64.035,
+          148.322
+        ],
+        [
+          73.334,
+          39.986
+        ],
+        [
+          248.824,
+          56.353
+        ]
+      ],
+      "center": [
+        156.761,
+        102.338
+      ],
+      "angle_deg": 5.333,
+      "width": 176.028,
+      "height": 108.764,
+      "pixel_count": 18881,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          238.421,
+          163.842
+        ],
+        [
+          63.135,
+          147.768
+        ],
+        [
+          73.065,
+          39.486
+        ],
+        [
+          248.35,
+          55.56
+        ]
+      ],
+      "center": [
+        155.743,
+        101.664
+      ],
+      "angle_deg": 5.239,
+      "width": 176.027,
+      "height": 108.736,
+      "pixel_count": 18875,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          237.301,
+          162.995
+        ],
+        [
+          61.975,
+          147.768
+        ],
+        [
+          71.671,
+          39.486
+        ],
+        [
+          246.997,
+          54.699
+        ]
+      ],
+      "center": [
+        154.486,
+        100.999
+      ],
+      "angle_deg": 4.964,
+      "width": 176.027,
+      "height": 108.729,
+      "pixel_count": 18874,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          229.978,
+          159.17
+        ],
+        [
+          54.327,
+          147.768
+        ],
+        [
+          61.427,
+          39.486
+        ],
+        [
+          237.078,
+          50.7
+        ]
+      ],
+      "center": [
+        145.702,
+        99.212
+      ],
+      "angle_deg": 3.714,
+      "width": 176.027,
+      "height": 108.729,
+      "pixel_count": 18881,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          228.258,
+          158.566
+        ],
+        [
+          52.556,
+          148.19
+        ],
+        [
+          58.964,
+          39.683
+        ],
+        [
+          234.666,
+          50.059
+        ]
+      ],
+      "center": [
+        143.611,
+        99.186
+      ],
+      "angle_deg": 3.38,
+      "width": 176.027,
+      "height": 108.702,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          228.258,
+          158.566
+        ],
+        [
+          52.556,
+          148.19
+        ],
+        [
+          58.964,
+          39.683
+        ],
+        [
+          234.666,
+          50.059
+        ]
+      ],
+      "center": [
+        143.611,
+        99.186
+      ],
+      "angle_deg": 3.38,
+      "width": 176.027,
+      "height": 108.702,
+      "pixel_count": 18878,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ],
+  "beishang": [
+    {
+      "corners": [
+        [
+          275.142,
+          155.823
+        ],
+        [
+          99.29,
+          163.307
+        ],
+        [
+          94.667,
+          54.674
+        ],
+        [
+          270.519,
+          47.19
+        ]
+      ],
+      "center": [
+        184.904,
+        105.249
+      ],
+      "angle_deg": -2.437,
+      "width": 176.07,
+      "height": 108.737,
+      "pixel_count": 18879,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          275.142,
+          155.823
+        ],
+        [
+          99.29,
+          163.307
+        ],
+        [
+          94.667,
+          54.674
+        ],
+        [
+          270.519,
+          47.19
+        ]
+      ],
+      "center": [
+        184.904,
+        105.249
+      ],
+      "angle_deg": -2.437,
+      "width": 176.07,
+      "height": 108.731,
+      "pixel_count": 18879,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          275.503,
+          156.421
+        ],
+        [
+          99.555,
+          162.949
+        ],
+        [
+          95.523,
+          54.283
+        ],
+        [
+          271.471,
+          47.755
+        ]
+      ],
+      "center": [
+        185.513,
+        105.352
+      ],
+      "angle_deg": -2.125,
+      "width": 176.085,
+      "height": 108.731,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          275.95,
+          158.1
+        ],
+        [
+          99.883,
+          162.232
+        ],
+        [
+          97.337,
+          53.752
+        ],
+        [
+          273.404,
+          49.62
+        ]
+      ],
+      "center": [
+        186.644,
+        105.926
+      ],
+      "angle_deg": -1.344,
+      "width": 176.07,
+      "height": 108.51,
+      "pixel_count": 18887,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          276.0,
+          160.464
+        ],
+        [
+          100.514,
+          161.923
+        ],
+        [
+          99.755,
+          53.491
+        ],
+        [
+          275.835,
+          52.032
+        ]
+      ],
+      "center": [
+        188.244,
+        106.977
+      ],
+      "angle_deg": -0.476,
+      "width": 176.085,
+      "height": 108.51,
+      "pixel_count": 18929,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          276.572,
+          161.0
+        ],
+        [
+          100.654,
+          161.923
+        ],
+        [
+          101.0,
+          53.491
+        ],
+        [
+          276.0,
+          53.0
+        ]
+      ],
+      "center": [
+        188.5,
+        107.0
+      ],
+      "angle_deg": -0.301,
+      "width": 176.085,
+      "height": 108.51,
+      "pixel_count": 18876,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          276.572,
+          167.138
+        ],
+        [
+          100.654,
+          161.923
+        ],
+        [
+          103.774,
+          53.491
+        ],
+        [
+          279.866,
+          58.486
+        ]
+      ],
+      "center": [
+        190.19,
+        110.171
+      ],
+      "angle_deg": 1.698,
+      "width": 176.085,
+      "height": 108.615,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          276.493,
+          168.169
+        ],
+        [
+          100.53,
+          162.211
+        ],
+        [
+          104.332,
+          53.659
+        ],
+        [
+          280.248,
+          59.616
+        ]
+      ],
+      "center": [
+        190.452,
+        110.914
+      ],
+      "angle_deg": 1.939,
+      "width": 176.093,
+      "height": 108.69,
+      "pixel_count": 18862,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          276.493,
+          169.203
+        ],
+        [
+          100.514,
+          162.452
+        ],
+        [
+          104.697,
+          53.842
+        ],
+        [
+          280.66,
+          60.593
+        ]
+      ],
+      "center": [
+        190.595,
+        111.523
+      ],
+      "angle_deg": 2.197,
+      "width": 176.096,
+      "height": 108.701,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          276.447,
+          170.073
+        ],
+        [
+          100.499,
+          162.81
+        ],
+        [
+          104.744,
+          54.201
+        ],
+        [
+          280.66,
+          61.465
+        ]
+      ],
+      "center": [
+        190.595,
+        112.137
+      ],
+      "angle_deg": 2.364,
+      "width": 176.093,
+      "height": 108.701,
+      "pixel_count": 18878,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          276.225,
+          171.75
+        ],
+        [
+          100.321,
+          163.527
+        ],
+        [
+          104.744,
+          54.905
+        ],
+        [
+          280.66,
+          63.128
+        ]
+      ],
+      "center": [
+        190.595,
+        113.328
+      ],
+      "angle_deg": 2.676,
+      "width": 176.096,
+      "height": 108.701,
+      "pixel_count": 18871,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          275.221,
+          173.819
+        ],
+        [
+          99.445,
+          165.388
+        ],
+        [
+          104.744,
+          56.744
+        ],
+        [
+          280.521,
+          65.293
+        ]
+      ],
+      "center": [
+        189.983,
+        115.353
+      ],
+      "angle_deg": 2.746,
+      "width": 176.096,
+      "height": 108.701,
+      "pixel_count": 18870,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          275.11,
+          173.819
+        ],
+        [
+          99.163,
+          165.79
+        ],
+        [
+          104.193,
+          57.255
+        ],
+        [
+          280.14,
+          65.293
+        ]
+      ],
+      "center": [
+        189.651,
+        115.6
+      ],
+      "angle_deg": 2.613,
+      "width": 176.096,
+      "height": 108.652,
+      "pixel_count": 18877,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          274.784,
+          173.819
+        ],
+        [
+          98.904,
+          166.08
+        ],
+        [
+          103.68,
+          57.554
+        ],
+        [
+          279.559,
+          65.293
+        ]
+      ],
+      "center": [
+        189.232,
+        115.6
+      ],
+      "angle_deg": 2.519,
+      "width": 176.05,
+      "height": 108.631,
+      "pixel_count": 18871,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          274.512,
+          173.608
+        ],
+        [
+          98.522,
+          166.352
+        ],
+        [
+          102.995,
+          57.867
+        ],
+        [
+          278.984,
+          65.122
+        ]
+      ],
+      "center": [
+        188.753,
+        115.6
+      ],
+      "angle_deg": 2.361,
+      "width": 176.059,
+      "height": 108.631,
+      "pixel_count": 18890,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          273.887,
+          172.258
+        ],
+        [
+          97.955,
+          166.518
+        ],
+        [
+          101.491,
+          57.916
+        ],
+        [
+          277.425,
+          63.689
+        ]
+      ],
+      "center": [
+        187.687,
+        115.104
+      ],
+      "angle_deg": 1.869,
+      "width": 176.05,
+      "height": 108.627,
+      "pixel_count": 18881,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          273.883,
+          172.258
+        ],
+        [
+          97.95,
+          166.519
+        ],
+        [
+          101.459,
+          57.95
+        ],
+        [
+          277.424,
+          63.656
+        ]
+      ],
+      "center": [
+        187.671,
+        115.087
+      ],
+      "angle_deg": 1.868,
+      "width": 176.027,
+      "height": 108.627,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          273.883,
+          172.133
+        ],
+        [
+          97.918,
+          166.559
+        ],
+        [
+          101.394,
+          58.003
+        ],
+        [
+          277.326,
+          63.577
+        ]
+      ],
+      "center": [
+        187.64,
+        115.068
+      ],
+      "angle_deg": 1.814,
+      "width": 176.027,
+      "height": 108.627,
+      "pixel_count": 18876,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          273.84,
+          172.091
+        ],
+        [
+          97.917,
+          166.589
+        ],
+        [
+          101.313,
+          58.008
+        ],
+        [
+          277.236,
+          63.509
+        ]
+      ],
+      "center": [
+        187.577,
+        115.049
+      ],
+      "angle_deg": 1.791,
+      "width": 176.023,
+      "height": 108.611,
+      "pixel_count": 18871,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          273.543,
+          169.953
+        ],
+        [
+          97.429,
+          166.897
+        ],
+        [
+          99.313,
+          58.374
+        ],
+        [
+          275.426,
+          61.431
+        ]
+      ],
+      "center": [
+        186.428,
+        114.164
+      ],
+      "angle_deg": 0.994,
+      "width": 176.021,
+      "height": 108.539,
+      "pixel_count": 18896,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          273.315,
+          169.21
+        ],
+        [
+          97.333,
+          166.897
+        ],
+        [
+          98.537,
+          58.692
+        ],
+        [
+          274.548,
+          60.826
+        ]
+      ],
+      "center": [
+        185.926,
+        114.016
+      ],
+      "angle_deg": 0.753,
+      "width": 176.009,
+      "height": 108.391,
+      "pixel_count": 18877,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          272.913,
+          168.505
+        ],
+        [
+          97.304,
+          167.207
+        ],
+        [
+          98.083,
+          58.823
+        ],
+        [
+          273.663,
+          60.275
+        ]
+      ],
+      "center": [
+        185.498,
+        113.782
+      ],
+      "angle_deg": 0.423,
+      "width": 176.023,
+      "height": 108.391,
+      "pixel_count": 18820,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          272.255,
+          167.375
+        ],
+        [
+          96.731,
+          167.289
+        ],
+        [
+          97.034,
+          58.949
+        ],
+        [
+          272.274,
+          59.183
+        ]
+      ],
+      "center": [
+        184.503,
+        113.034
+      ],
+      "angle_deg": 0.028,
+      "width": 176.023,
+      "height": 108.391,
+      "pixel_count": 18876,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          271.971,
+          164.987
+        ],
+        [
+          96.161,
+          167.289
+        ],
+        [
+          94.597,
+          58.949
+        ],
+        [
+          270.69,
+          56.519
+        ]
+      ],
+      "center": [
+        183.426,
+        112.023
+      ],
+      "angle_deg": -0.75,
+      "width": 176.085,
+      "height": 108.479,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          271.639,
+          158.286
+        ],
+        [
+          95.891,
+          167.165
+        ],
+        [
+          89.996,
+          58.692
+        ],
+        [
+          265.843,
+          49.789
+        ]
+      ],
+      "center": [
+        180.746,
+        108.617
+      ],
+      "angle_deg": -2.892,
+      "width": 176.085,
+      "height": 108.644,
+      "pixel_count": 18873,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          271.639,
+          157.225
+        ],
+        [
+          95.891,
+          167.165
+        ],
+        [
+          89.511,
+          58.663
+        ],
+        [
+          265.327,
+          48.724
+        ]
+      ],
+      "center": [
+        180.619,
+        107.944
+      ],
+      "angle_deg": -3.237,
+      "width": 176.085,
+      "height": 108.644,
+      "pixel_count": 18872,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          271.639,
+          156.278
+        ],
+        [
+          95.891,
+          166.904
+        ],
+        [
+          89.511,
+          58.361
+        ],
+        [
+          265.327,
+          47.736
+        ]
+      ],
+      "center": [
+        180.619,
+        107.32
+      ],
+      "angle_deg": -3.46,
+      "width": 176.069,
+      "height": 108.674,
+      "pixel_count": 18875,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          271.854,
+          155.566
+        ],
+        [
+          96.166,
+          166.558
+        ],
+        [
+          89.511,
+          58.169
+        ],
+        [
+          265.327,
+          47.177
+        ]
+      ],
+      "center": [
+        180.619,
+        106.867
+      ],
+      "angle_deg": -3.58,
+      "width": 176.069,
+      "height": 108.741,
+      "pixel_count": 18877,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          273.506,
+          154.752
+        ],
+        [
+          97.807,
+          164.953
+        ],
+        [
+          91.341,
+          56.338
+        ],
+        [
+          267.04,
+          46.077
+        ]
+      ],
+      "center": [
+        182.424,
+        105.415
+      ],
+      "angle_deg": -3.323,
+      "width": 176.032,
+      "height": 108.807,
+      "pixel_count": 18883,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          273.506,
+          154.752
+        ],
+        [
+          97.807,
+          164.953
+        ],
+        [
+          91.341,
+          56.338
+        ],
+        [
+          267.04,
+          46.077
+        ]
+      ],
+      "center": [
+        182.424,
+        105.415
+      ],
+      "angle_deg": -3.323,
+      "width": 176.032,
+      "height": 108.807,
+      "pixel_count": 18877,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ],
+  "qidai": [
+    {
+      "corners": [
+        [
+          213.98,
+          138.304
+        ],
+        [
+          38.157,
+          149.559
+        ],
+        [
+          31.208,
+          41.004
+        ],
+        [
+          207.031,
+          29.749
+        ]
+      ],
+      "center": [
+        122.594,
+        89.654
+      ],
+      "angle_deg": -3.663,
+      "width": 176.122,
+      "height": 108.777,
+      "pixel_count": 18890,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          213.98,
+          138.304
+        ],
+        [
+          38.157,
+          149.559
+        ],
+        [
+          31.208,
+          41.004
+        ],
+        [
+          207.031,
+          29.749
+        ]
+      ],
+      "center": [
+        122.594,
+        89.654
+      ],
+      "angle_deg": -3.663,
+      "width": 176.122,
+      "height": 108.777,
+      "pixel_count": 18883,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          212.629,
+          137.58
+        ],
+        [
+          36.957,
+          150.163
+        ],
+        [
+          29.184,
+          41.649
+        ],
+        [
+          204.856,
+          29.065
+        ]
+      ],
+      "center": [
+        120.906,
+        89.836
+      ],
+      "angle_deg": -4.097,
+      "width": 176.052,
+      "height": 108.78,
+      "pixel_count": 18893,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          206.36,
+          135.972
+        ],
+        [
+          31.428,
+          155.571
+        ],
+        [
+          19.23,
+          47.45
+        ],
+        [
+          194.163,
+          28.115
+        ]
+      ],
+      "center": [
+        112.795,
+        91.644
+      ],
+      "angle_deg": -6.393,
+      "width": 176.122,
+      "height": 108.78,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          205.32,
+          135.972
+        ],
+        [
+          30.553,
+          157.143
+        ],
+        [
+          17.428,
+          49.158
+        ],
+        [
+          192.194,
+          28.115
+        ]
+      ],
+      "center": [
+        111.374,
+        92.529
+      ],
+      "angle_deg": -6.907,
+      "width": 176.115,
+      "height": 108.78,
+      "pixel_count": 18880,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          204.368,
+          135.972
+        ],
+        [
+          29.693,
+          158.804
+        ],
+        [
+          15.595,
+          50.948
+        ],
+        [
+          190.27,
+          28.115
+        ]
+      ],
+      "center": [
+        109.982,
+        93.46
+      ],
+      "angle_deg": -7.447,
+      "width": 176.11,
+      "height": 108.774,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          203.395,
+          136.059
+        ],
+        [
+          28.953,
+          160.282
+        ],
+        [
+          14.005,
+          52.636
+        ],
+        [
+          188.447,
+          28.412
+        ]
+      ],
+      "center": [
+        108.7,
+        94.347
+      ],
+      "angle_deg": -7.906,
+      "width": 176.115,
+      "height": 108.77,
+      "pixel_count": 18885,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          203.327,
+          136.133
+        ],
+        [
+          28.908,
+          160.483
+        ],
+        [
+          13.883,
+          52.86
+        ],
+        [
+          188.302,
+          28.432
+        ]
+      ],
+      "center": [
+        108.605,
+        94.497
+      ],
+      "angle_deg": -7.947,
+      "width": 176.115,
+      "height": 108.761,
+      "pixel_count": 18885,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          203.302,
+          136.136
+        ],
+        [
+          28.886,
+          160.735
+        ],
+        [
+          13.696,
+          53.031
+        ],
+        [
+          188.112,
+          28.499
+        ]
+      ],
+      "center": [
+        108.499,
+        94.583
+      ],
+      "angle_deg": -8.028,
+      "width": 176.11,
+      "height": 108.761,
+      "pixel_count": 18887,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          203.128,
+          136.173
+        ],
+        [
+          28.814,
+          160.994
+        ],
+        [
+          13.482,
+          53.319
+        ],
+        [
+          187.796,
+          28.51
+        ]
+      ],
+      "center": [
+        108.305,
+        94.746
+      ],
+      "angle_deg": -8.104,
+      "width": 176.11,
+      "height": 108.761,
+      "pixel_count": 18886,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          202.98,
+          136.24
+        ],
+        [
+          28.703,
+          161.588
+        ],
+        [
+          13.046,
+          53.938
+        ],
+        [
+          187.322,
+          28.59
+        ]
+      ],
+      "center": [
+        108.013,
+        95.089
+      ],
+      "angle_deg": -8.275,
+      "width": 176.11,
+      "height": 108.761,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          201.865,
+          138.223
+        ],
+        [
+          28.308,
+          167.116
+        ],
+        [
+          10.326,
+          59.913
+        ],
+        [
+          184.034,
+          31.021
+        ]
+      ],
+      "center": [
+        106.096,
+        99.068
+      ],
+      "angle_deg": -9.452,
+      "width": 176.105,
+      "height": 108.761,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          201.826,
+          138.919
+        ],
+        [
+          28.308,
+          168.809
+        ],
+        [
+          9.756,
+          61.681
+        ],
+        [
+          183.314,
+          31.791
+        ]
+      ],
+      "center": [
+        105.76,
+        100.3
+      ],
+      "angle_deg": -9.774,
+      "width": 176.11,
+      "height": 108.705,
+      "pixel_count": 18888,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          201.826,
+          139.782
+        ],
+        [
+          28.308,
+          170.572
+        ],
+        [
+          9.756,
+          63.4
+        ],
+        [
+          183.314,
+          32.61
+        ]
+      ],
+      "center": [
+        105.76,
+        101.591
+      ],
+      "angle_deg": -10.062,
+      "width": 176.113,
+      "height": 108.705,
+      "pixel_count": 18892,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          201.826,
+          140.708
+        ],
+        [
+          28.574,
+          172.329
+        ],
+        [
+          9.756,
+          65.408
+        ],
+        [
+          183.314,
+          33.787
+        ]
+      ],
+      "center": [
+        105.76,
+        103.058
+      ],
+      "angle_deg": -10.343,
+      "width": 176.114,
+      "height": 108.728,
+      "pixel_count": 18892,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          205.478,
+          146.188
+        ],
+        [
+          32.354,
+          178.716
+        ],
+        [
+          12.276,
+          71.858
+        ],
+        [
+          185.4,
+          39.33
+        ]
+      ],
+      "center": [
+        108.877,
+        109.023
+      ],
+      "angle_deg": -10.641,
+      "width": 176.114,
+      "height": 108.75,
+      "pixel_count": 18887,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          206.865,
+          147.105
+        ],
+        [
+          33.655,
+          178.766
+        ],
+        [
+          13.855,
+          71.858
+        ],
+        [
+          187.065,
+          40.143
+        ]
+      ],
+      "center": [
+        110.36,
+        109.656
+      ],
+      "angle_deg": -10.359,
+      "width": 176.114,
+      "height": 108.75,
+      "pixel_count": 18890,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          208.371,
+          148.029
+        ],
+        [
+          35.031,
+          178.766
+        ],
+        [
+          15.81,
+          71.858
+        ],
+        [
+          189.15,
+          40.991
+        ]
+      ],
+      "center": [
+        112.091,
+        109.656
+      ],
+      "angle_deg": -10.055,
+      "width": 176.13,
+      "height": 108.78,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          209.922,
+          148.902
+        ],
+        [
+          36.383,
+          178.766
+        ],
+        [
+          17.918,
+          71.47
+        ],
+        [
+          191.458,
+          41.605
+        ]
+      ],
+      "center": [
+        113.92,
+        109.656
+      ],
+      "angle_deg": -9.764,
+      "width": 176.119,
+      "height": 108.803,
+      "pixel_count": 18888,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          217.731,
+          151.208
+        ],
+        [
+          42.949,
+          172.956
+        ],
+        [
+          29.502,
+          64.887
+        ],
+        [
+          204.284,
+          43.05
+        ]
+      ],
+      "center": [
+        123.617,
+        108.048
+      ],
+      "angle_deg": -7.093,
+      "width": 176.119,
+      "height": 108.803,
+      "pixel_count": 18886,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          219.056,
+          151.208
+        ],
+        [
+          44.07,
+          171.163
+        ],
+        [
+          31.747,
+          63.06
+        ],
+        [
+          206.733,
+          43.05
+        ]
+      ],
+      "center": [
+        125.402,
+        107.138
+      ],
+      "angle_deg": -6.506,
+      "width": 176.119,
+      "height": 108.838,
+      "pixel_count": 18886,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          220.178,
+          151.208
+        ],
+        [
+          44.973,
+          169.283
+        ],
+        [
+          33.847,
+          61.063
+        ],
+        [
+          209.052,
+          43.05
+        ]
+      ],
+      "center": [
+        127.013,
+        106.167
+      ],
+      "angle_deg": -5.89,
+      "width": 176.126,
+      "height": 108.803,
+      "pixel_count": 18883,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          221.303,
+          150.946
+        ],
+        [
+          45.978,
+          167.499
+        ],
+        [
+          35.748,
+          59.144
+        ],
+        [
+          211.073,
+          42.59
+        ]
+      ],
+      "center": [
+        128.526,
+        105.045
+      ],
+      "angle_deg": -5.393,
+      "width": 176.119,
+      "height": 108.8,
+      "pixel_count": 18887,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          224.121,
+          148.93
+        ],
+        [
+          48.235,
+          158.112
+        ],
+        [
+          42.562,
+          49.46
+        ],
+        [
+          218.448,
+          40.278
+        ]
+      ],
+      "center": [
+        133.341,
+        99.195
+      ],
+      "angle_deg": -2.988,
+      "width": 176.108,
+      "height": 108.791,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          224.121,
+          148.143
+        ],
+        [
+          48.235,
+          156.584
+        ],
+        [
+          43.256,
+          47.97
+        ],
+        [
+          219.162,
+          39.53
+        ]
+      ],
+      "center": [
+        133.815,
+        98.057
+      ],
+      "angle_deg": -2.748,
+      "width": 176.105,
+      "height": 108.739,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          224.121,
+          147.579
+        ],
+        [
+          48.235,
+          154.903
+        ],
+        [
+          43.256,
+          46.341
+        ],
+        [
+          219.162,
+          39.018
+        ]
+      ],
+      "center": [
+        133.815,
+        96.96
+      ],
+      "angle_deg": -2.384,
+      "width": 176.108,
+      "height": 108.739,
+      "pixel_count": 18885,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          223.899,
+          146.841
+        ],
+        [
+          47.993,
+          153.544
+        ],
+        [
+          43.256,
+          44.977
+        ],
+        [
+          219.162,
+          38.275
+        ]
+      ],
+      "center": [
+        133.815,
+        95.909
+      ],
+      "angle_deg": -2.182,
+      "width": 176.034,
+      "height": 108.667,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          220.335,
+          142.39
+        ],
+        [
+          44.334,
+          149.346
+        ],
+        [
+          40.037,
+          40.635
+        ],
+        [
+          216.039,
+          33.678
+        ]
+      ],
+      "center": [
+        130.186,
+        91.512
+      ],
+      "angle_deg": -2.263,
+      "width": 176.034,
+      "height": 108.667,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          219.103,
+          141.513
+        ],
+        [
+          43.25,
+          148.982
+        ],
+        [
+          38.639,
+          40.413
+        ],
+        [
+          214.492,
+          32.944
+        ]
+      ],
+      "center": [
+        128.871,
+        90.963
+      ],
+      "angle_deg": -2.432,
+      "width": 176.034,
+      "height": 108.667,
+      "pixel_count": 18890,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          219.103,
+          141.513
+        ],
+        [
+          43.25,
+          148.982
+        ],
+        [
+          38.639,
+          40.413
+        ],
+        [
+          214.492,
+          32.944
+        ]
+      ],
+      "center": [
+        128.871,
+        90.963
+      ],
+      "angle_deg": -2.432,
+      "width": 176.139,
+      "height": 108.796,
+      "pixel_count": 18891,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ],
+  "kuku": [
+    {
+      "corners": [
+        [
+          255.007,
+          151.09
+        ],
+        [
+          78.956,
+          153.765
+        ],
+        [
+          77.276,
+          45.218
+        ],
+        [
+          253.327,
+          42.494
+        ]
+      ],
+      "center": [
+        166.141,
+        98.129
+      ],
+      "angle_deg": -0.871,
+      "width": 176.122,
+      "height": 108.56,
+      "pixel_count": 18919,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 0
+    },
+    {
+      "corners": [
+        [
+          255.007,
+          151.09
+        ],
+        [
+          78.956,
+          153.765
+        ],
+        [
+          77.276,
+          45.218
+        ],
+        [
+          253.327,
+          42.494
+        ]
+      ],
+      "center": [
+        166.141,
+        98.129
+      ],
+      "angle_deg": -0.871,
+      "width": 176.122,
+      "height": 108.56,
+      "pixel_count": 18902,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 1
+    },
+    {
+      "corners": [
+        [
+          256.841,
+          151.366
+        ],
+        [
+          80.728,
+          153.143
+        ],
+        [
+          79.634,
+          44.75
+        ],
+        [
+          255.748,
+          42.974
+        ]
+      ],
+      "center": [
+        168.238,
+        98.383
+      ],
+      "angle_deg": -0.578,
+      "width": 176.123,
+      "height": 108.56,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 2
+    },
+    {
+      "corners": [
+        [
+          266.923,
+          154.405
+        ],
+        [
+          90.731,
+          152.045
+        ],
+        [
+          92.184,
+          43.583
+        ],
+        [
+          268.376,
+          45.943
+        ]
+      ],
+      "center": [
+        179.554,
+        98.994
+      ],
+      "angle_deg": 0.767,
+      "width": 176.132,
+      "height": 108.56,
+      "pixel_count": 18894,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 3
+    },
+    {
+      "corners": [
+        [
+          269.657,
+          155.735
+        ],
+        [
+          93.566,
+          152.045
+        ],
+        [
+          95.938,
+          43.565
+        ],
+        [
+          272.029,
+          46.874
+        ]
+      ],
+      "center": [
+        182.798,
+        99.387
+      ],
+      "angle_deg": 1.2,
+      "width": 176.179,
+      "height": 108.719,
+      "pixel_count": 18909,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 4
+    },
+    {
+      "corners": [
+        [
+          272.554,
+          157.022
+        ],
+        [
+          96.441,
+          152.045
+        ],
+        [
+          99.644,
+          43.565
+        ],
+        [
+          275.756,
+          48.35
+        ]
+      ],
+      "center": [
+        186.099,
+        100.091
+      ],
+      "angle_deg": 1.619,
+      "width": 176.179,
+      "height": 108.823,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 5
+    },
+    {
+      "corners": [
+        [
+          280.648,
+          161.174
+        ],
+        [
+          104.693,
+          152.287
+        ],
+        [
+          110.184,
+          43.565
+        ],
+        [
+          286.139,
+          52.451
+        ]
+      ],
+      "center": [
+        195.416,
+        102.369
+      ],
+      "angle_deg": 2.891,
+      "width": 176.163,
+      "height": 108.845,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 6
+    },
+    {
+      "corners": [
+        [
+          282.951,
+          162.558
+        ],
+        [
+          107.124,
+          152.534
+        ],
+        [
+          113.318,
+          43.887
+        ],
+        [
+          289.145,
+          53.911
+        ]
+      ],
+      "center": [
+        198.134,
+        103.223
+      ],
+      "angle_deg": 3.263,
+      "width": 176.163,
+      "height": 108.823,
+      "pixel_count": 18900,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 7
+    },
+    {
+      "corners": [
+        [
+          291.266,
+          168.43
+        ],
+        [
+          115.648,
+          154.588
+        ],
+        [
+          124.201,
+          46.08
+        ],
+        [
+          299.819,
+          59.922
+        ]
+      ],
+      "center": [
+        207.734,
+        107.255
+      ],
+      "angle_deg": 4.507,
+      "width": 176.163,
+      "height": 108.845,
+      "pixel_count": 18907,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 8
+    },
+    {
+      "corners": [
+        [
+          292.082,
+          169.262
+        ],
+        [
+          116.489,
+          155.18
+        ],
+        [
+          125.188,
+          46.717
+        ],
+        [
+          300.78,
+          60.799
+        ]
+      ],
+      "center": [
+        208.635,
+        107.99
+      ],
+      "angle_deg": 4.585,
+      "width": 176.163,
+      "height": 108.845,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 9
+    },
+    {
+      "corners": [
+        [
+          292.082,
+          170.057
+        ],
+        [
+          116.489,
+          155.552
+        ],
+        [
+          125.188,
+          47.045
+        ],
+        [
+          300.78,
+          61.55
+        ]
+      ],
+      "center": [
+        208.635,
+        108.551
+      ],
+      "angle_deg": 4.722,
+      "width": 176.163,
+      "height": 108.845,
+      "pixel_count": 18897,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 10
+    },
+    {
+      "corners": [
+        [
+          292.082,
+          170.551
+        ],
+        [
+          116.489,
+          156.071
+        ],
+        [
+          125.188,
+          47.572
+        ],
+        [
+          300.78,
+          62.052
+        ]
+      ],
+      "center": [
+        208.635,
+        109.061
+      ],
+      "angle_deg": 4.714,
+      "width": 176.156,
+      "height": 108.862,
+      "pixel_count": 18889,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 11
+    },
+    {
+      "corners": [
+        [
+          290.286,
+          171.723
+        ],
+        [
+          114.67,
+          158.617
+        ],
+        [
+          122.788,
+          50.102
+        ],
+        [
+          298.403,
+          63.178
+        ]
+      ],
+      "center": [
+        206.537,
+        110.928
+      ],
+      "angle_deg": 4.268,
+      "width": 176.165,
+      "height": 108.862,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 12
+    },
+    {
+      "corners": [
+        [
+          289.395,
+          171.723
+        ],
+        [
+          113.766,
+          159.147
+        ],
+        [
+          121.58,
+          50.565
+        ],
+        [
+          297.209,
+          63.178
+        ]
+      ],
+      "center": [
+        205.487,
+        111.175
+      ],
+      "angle_deg": 4.096,
+      "width": 176.143,
+      "height": 108.862,
+      "pixel_count": 18898,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 13
+    },
+    {
+      "corners": [
+        [
+          288.393,
+          171.723
+        ],
+        [
+          112.643,
+          159.515
+        ],
+        [
+          120.183,
+          50.969
+        ],
+        [
+          295.933,
+          63.178
+        ]
+      ],
+      "center": [
+        204.288,
+        111.346
+      ],
+      "angle_deg": 3.974,
+      "width": 176.143,
+      "height": 108.862,
+      "pixel_count": 18905,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 14
+    },
+    {
+      "corners": [
+        [
+          287.178,
+          171.658
+        ],
+        [
+          111.422,
+          159.984
+        ],
+        [
+          118.639,
+          51.33
+        ],
+        [
+          294.395,
+          63.004
+        ]
+      ],
+      "center": [
+        202.908,
+        111.346
+      ],
+      "angle_deg": 3.8,
+      "width": 176.173,
+      "height": 108.862,
+      "pixel_count": 18899,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 15
+    },
+    {
+      "corners": [
+        [
+          280.134,
+          169.791
+        ],
+        [
+          104.105,
+          161.84
+        ],
+        [
+          109.007,
+          53.08
+        ],
+        [
+          285.036,
+          61.012
+        ]
+      ],
+      "center": [
+        194.57,
+        111.372
+      ],
+      "angle_deg": 2.586,
+      "width": 176.173,
+      "height": 108.884,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 16
+    },
+    {
+      "corners": [
+        [
+          278.295,
+          169.409
+        ],
+        [
+          102.224,
+          161.859
+        ],
+        [
+          106.899,
+          53.084
+        ],
+        [
+          282.97,
+          60.653
+        ]
+      ],
+      "center": [
+        192.597,
+        111.436
+      ],
+      "angle_deg": 2.455,
+      "width": 176.143,
+      "height": 108.884,
+      "pixel_count": 18906,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 17
+    },
+    {
+      "corners": [
+        [
+          273.031,
+          169.101
+        ],
+        [
+          97.11,
+          162.451
+        ],
+        [
+          101.223,
+          53.644
+        ],
+        [
+          277.144,
+          60.294
+        ]
+      ],
+      "center": [
+        187.127,
+        111.372
+      ],
+      "angle_deg": 2.165,
+      "width": 176.134,
+      "height": 108.856,
+      "pixel_count": 18903,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 18
+    },
+    {
+      "corners": [
+        [
+          266.166,
+          168.844
+        ],
+        [
+          90.123,
+          163.165
+        ],
+        [
+          93.633,
+          54.375
+        ],
+        [
+          269.676,
+          60.054
+        ]
+      ],
+      "center": [
+        179.9,
+        111.246
+      ],
+      "angle_deg": 1.848,
+      "width": 176.046,
+      "height": 108.847,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 19
+    },
+    {
+      "corners": [
+        [
+          243.857,
+          165.557
+        ],
+        [
+          67.91,
+          163.165
+        ],
+        [
+          69.149,
+          54.754
+        ],
+        [
+          245.095,
+          56.97
+        ]
+      ],
+      "center": [
+        156.503,
+        110.261
+      ],
+      "angle_deg": 0.779,
+      "width": 176.023,
+      "height": 108.594,
+      "pixel_count": 18856,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 20
+    },
+    {
+      "corners": [
+        [
+          243.857,
+          164.123
+        ],
+        [
+          67.91,
+          163.165
+        ],
+        [
+          67.748,
+          54.754
+        ],
+        [
+          243.768,
+          56.045
+        ]
+      ],
+      "center": [
+        155.9,
+        109.979
+      ],
+      "angle_deg": 0.312,
+      "width": 176.02,
+      "height": 108.231,
+      "pixel_count": 18914,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 21
+    },
+    {
+      "corners": [
+        [
+          243.857,
+          163.195
+        ],
+        [
+          67.91,
+          162.924
+        ],
+        [
+          67.748,
+          54.754
+        ],
+        [
+          243.768,
+          55.025
+        ]
+      ],
+      "center": [
+        155.9,
+        108.975
+      ],
+      "angle_deg": 0.088,
+      "width": 176.02,
+      "height": 108.231,
+      "pixel_count": 18909,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 22
+    },
+    {
+      "corners": [
+        [
+          244.052,
+          161.811
+        ],
+        [
+          68.032,
+          162.273
+        ],
+        [
+          67.748,
+          54.043
+        ],
+        [
+          243.768,
+          53.58
+        ]
+      ],
+      "center": [
+        155.9,
+        107.927
+      ],
+      "angle_deg": -0.15,
+      "width": 176.023,
+      "height": 108.231,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 23
+    },
+    {
+      "corners": [
+        [
+          252.125,
+          154.434
+        ],
+        [
+          76.011,
+          158.816
+        ],
+        [
+          73.305,
+          50.057
+        ],
+        [
+          249.42,
+          45.676
+        ]
+      ],
+      "center": [
+        162.715,
+        102.246
+      ],
+      "angle_deg": -1.425,
+      "width": 176.082,
+      "height": 108.583,
+      "pixel_count": 18897,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 24
+    },
+    {
+      "corners": [
+        [
+          252.125,
+          154.434
+        ],
+        [
+          76.011,
+          158.816
+        ],
+        [
+          73.305,
+          50.057
+        ],
+        [
+          249.42,
+          45.676
+        ]
+      ],
+      "center": [
+        162.715,
+        102.246
+      ],
+      "angle_deg": -1.425,
+      "width": 176.168,
+      "height": 108.792,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 25
+    },
+    {
+      "corners": [
+        [
+          252.125,
+          154.434
+        ],
+        [
+          76.011,
+          158.802
+        ],
+        [
+          73.305,
+          50.041
+        ],
+        [
+          249.42,
+          45.676
+        ]
+      ],
+      "center": [
+        162.715,
+        102.246
+      ],
+      "angle_deg": -1.421,
+      "width": 176.168,
+      "height": 108.792,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 26
+    },
+    {
+      "corners": [
+        [
+          252.109,
+          154.434
+        ],
+        [
+          75.994,
+          158.802
+        ],
+        [
+          73.305,
+          50.041
+        ],
+        [
+          249.42,
+          45.676
+        ]
+      ],
+      "center": [
+        162.71,
+        102.246
+      ],
+      "angle_deg": -1.421,
+      "width": 176.168,
+      "height": 108.792,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 27
+    },
+    {
+      "corners": [
+        [
+          251.636,
+          154.188
+        ],
+        [
+          75.613,
+          158.564
+        ],
+        [
+          72.977,
+          49.971
+        ],
+        [
+          249.0,
+          45.597
+        ]
+      ],
+      "center": [
+        162.307,
+        102.029
+      ],
+      "angle_deg": -1.424,
+      "width": 176.145,
+      "height": 108.632,
+      "pixel_count": 18897,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 28
+    },
+    {
+      "corners": [
+        [
+          251.636,
+          154.188
+        ],
+        [
+          75.613,
+          158.564
+        ],
+        [
+          72.977,
+          49.971
+        ],
+        [
+          249.0,
+          45.597
+        ]
+      ],
+      "center": [
+        162.307,
+        102.029
+      ],
+      "angle_deg": -1.424,
+      "width": 176.145,
+      "height": 108.632,
+      "pixel_count": 18904,
+      "confidence": 1.0,
+      "notes": "inner white writing panel",
+      "frame_index": 29
+    }
+  ]
+}
