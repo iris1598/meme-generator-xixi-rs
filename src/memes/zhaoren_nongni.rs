@@ -67,7 +67,7 @@ register_meme!(
     min_texts = 1,
     max_texts = 1,
     default_texts = &[DEFAULT_TEXT],
-    keywords = &["找人弄你", "再发找人弄你"],
+    keywords = &["西西说"],
     date_created = local_date(2026, 9, 9),
     date_modified = local_date(2026, 9, 9),
 );
