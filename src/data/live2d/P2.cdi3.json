@@ -1,0 +1,257 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "ParamGroup",
+			"Name": "1"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "ParamGroup",
+			"Name": "整体 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "ParamGroup",
+			"Name": "整体 Y"
+		},
+		{
+			"Id": "ParamEyeBallY2",
+			"GroupId": "ParamGroup",
+			"Name": "挤压"
+		},
+		{
+			"Id": "ParamEyeBallY3",
+			"GroupId": "ParamGroup",
+			"Name": "上挤压"
+		},
+		{
+			"Id": "ParamEyeBallY4",
+			"GroupId": "ParamGroup",
+			"Name": "下挤压"
+		},
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "ParamGroup",
+			"Name": "头 X"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "ParamGroup",
+			"Name": "风X1"
+		},
+		{
+			"Id": "ParamAngleZ4",
+			"GroupId": "ParamGroup",
+			"Name": "风X2"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "ParamGroup",
+			"Name": "头 Y"
+		},
+		{
+			"Id": "ParamAngleZ2",
+			"GroupId": "ParamGroup",
+			"Name": "风Y1"
+		},
+		{
+			"Id": "ParamAngleZ3",
+			"GroupId": "ParamGroup",
+			"Name": "风Y2"
+		},
+		{
+			"Id": "ParamAngleZ5",
+			"GroupId": "ParamGroup",
+			"Name": "五官Y"
+		},
+		{
+			"Id": "ParamAngleZ6",
+			"GroupId": "ParamGroup",
+			"Name": "五官Y2"
+		},
+		{
+			"Id": "ParamBreath26",
+			"GroupId": "ParamGroup",
+			"Name": "一一一"
+		},
+		{
+			"Id": "ParamEyeLOpen4",
+			"GroupId": "ParamGroup",
+			"Name": "眼开闭"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "ParamGroup",
+			"Name": "嘴开闭"
+		},
+		{
+			"Id": "ParamEyeBallX2",
+			"GroupId": "ParamGroup",
+			"Name": "整体位置 X"
+		},
+		{
+			"Id": "ParamEyeBallX3",
+			"GroupId": "ParamGroup",
+			"Name": "整体位置 Y"
+		},
+		{
+			"Id": "ParamEyeBallX4",
+			"GroupId": "ParamGroup",
+			"Name": "整体位置 Z"
+		},
+		{
+			"Id": "ParamBreath13",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子X"
+		},
+		{
+			"Id": "ParamBreath14",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子Y"
+		},
+		{
+			"Id": "ParamBreath8",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子Z"
+		},
+		{
+			"Id": "ParamBreath25",
+			"GroupId": "ParamGroup2",
+			"Name": "一一一"
+		},
+		{
+			"Id": "ParamBreath12",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子显隐"
+		},
+		{
+			"Id": "ParamBreath17",
+			"GroupId": "ParamGroup2",
+			"Name": "棍子显隐"
+		},
+		{
+			"Id": "ParamBreath9",
+			"GroupId": "ParamGroup2",
+			"Name": "牌手切换"
+		},
+		{
+			"Id": "ParamBreath10",
+			"GroupId": "ParamGroup2",
+			"Name": "棍手切换"
+		},
+		{
+			"Id": "ParamBreath15",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子前"
+		},
+		{
+			"Id": "ParamBreath11",
+			"GroupId": "ParamGroup2",
+			"Name": "棍子手位置Y"
+		},
+		{
+			"Id": "ParamBreath6",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子位置X"
+		},
+		{
+			"Id": "ParamBreath7",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子位置Y"
+		},
+		{
+			"Id": "ParamBreath5",
+			"GroupId": "ParamGroup2",
+			"Name": "牌子位置Z"
+		},
+		{
+			"Id": "ParamBreath20",
+			"GroupId": "ParamGroup3",
+			"Name": "帧特效"
+		},
+		{
+			"Id": "ParamBreath21",
+			"GroupId": "ParamGroup3",
+			"Name": "特效X"
+		},
+		{
+			"Id": "ParamBreath22",
+			"GroupId": "ParamGroup3",
+			"Name": "特效Y"
+		},
+		{
+			"Id": "ParamBreath23",
+			"GroupId": "ParamGroup3",
+			"Name": "特效Y"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "人物"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "举牌"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "特效"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part16",
+			"Name": "底色.png"
+		},
+		{
+			"Id": "Part13",
+			"Name": "附加.psd"
+		},
+		{
+			"Id": "Part10",
+			"Name": "人物"
+		},
+		{
+			"Id": "Part7",
+			"Name": "变形器"
+		},
+		{
+			"Id": "PartSketch0",
+			"Name": "[ 参考图 ]"
+		},
+		{
+			"Id": "Part9",
+			"Name": "牌子"
+		},
+		{
+			"Id": "Part3",
+			"Name": "特效"
+		},
+		{
+			"Id": "Part15",
+			"Name": "睁眼"
+		},
+		{
+			"Id": "Part5",
+			"Name": "闭眼"
+		},
+		{
+			"Id": "Part2",
+			"Name": "五官"
+		},
+		{
+			"Id": "Part8",
+			"Name": "张开嘴型"
+		},
+		{
+			"Id": "Part6",
+			"Name": "闭上嘴型"
+		}
+	]
+}

@@ -101,7 +101,10 @@ pub fn fit_sign_text(
 ) -> Result<FittedText, Error> {
     let normalized = text.replace("\r\n", "\n").replace('\r', "\n");
     if normalized.trim().is_empty() {
-        return Ok(FittedText { wrapped: String::new(), size: MAX_FONT_SIZE });
+        return Ok(FittedText {
+            wrapped: String::new(),
+            size: MAX_FONT_SIZE,
+        });
     }
     let mut size = MAX_FONT_SIZE;
     loop {

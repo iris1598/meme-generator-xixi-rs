@@ -22,12 +22,12 @@ const ANGLE: f32 = -1.2;
 /// height keeps multi-line blocks inside the bubble (auto-shrinks long texts).
 const AREA: ISize = ISize::new(1140, 300);
 
-fn zhaoren_nongni(
-    _: Vec<InputImage>,
-    texts: Vec<String>,
-    _: NoOptions,
-) -> Result<Vec<u8>, Error> {
-    let text = if !texts.is_empty() { &texts[0] } else { DEFAULT_TEXT };
+fn zhaoren_nongni(_: Vec<InputImage>, texts: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
+    let text = if !texts.is_empty() {
+        &texts[0]
+    } else {
+        DEFAULT_TEXT
+    };
     let frame = load_image("zhaoren_nongni/0.jpg")?;
     let mut surface = frame.to_surface();
 

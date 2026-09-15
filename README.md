@@ -27,9 +27,9 @@
 | `kurogames_iuno_say` | 尤诺说 | 文本（默认：月亮游离世间） |
 | `zhaoren_nongni` | 西西说 | 文本（默认：再发找人弄你） |
 
-`yaya_holdsign_1-6`（娅娅举牌）、`ams_holdsign_1-6`（小爱举牌）移植自 AstrBot 插件 `astrbot_plugin_denia_jupai`。人物层与牌子层分离合成（`assets/base` + `assets/sign`），文字贴在白色牌面上、随牌逐帧摆动。默认字色「粉」`#f6c4c4`，字体 `Kingnammm Maiyuan 2`（荆南麦圆体）。动作编号一致：1 眨眼 / 2 红温 / 3 开心 / 4 悲伤 / 5 期待 / 6 哭哭。GIF 保留每帧原始时长（30/40ms 交替），共享调色板无逐帧闪色，300×300 透明背景无限循环。正文末尾支持颜色标记 `#颜色` 或旧写法 `-c 颜色`（30 色预设名、6 位 hex、`r,g,b` 皆可，全角 `＃` 等效；`#`/`##` 均可标色、同时出现以最右单个 `#` 为准；无法识别的标记原样保留；语义与西西举牌完全一致，见 `holdsign::split_color_tail`），换行与字号使用全举牌统一逻辑（`src/textfit.rs`：40 起逐档减到 18、按像素宽度折行、ASCII 词组不拆行、最多 3 行、放不下报错），彩色 emoji 正常显示。
+`yaya_holdsign_1-6`（娅娅举牌）、`ams_holdsign_1-6`（小爱举牌）保留现有 `base` 人物 GIF，但牌子改为复用西西官方 `motion3 + moc3` 动态管线；不再读取旧 `sign` GIF 或旧标定数据。牌子样式、牌子颜色、文字颜色和文字均按每次请求实时生成，参数格式与西西举牌相同。
 
-`xixi_holdsign_1-6`（西西举牌）移植自官方来源的 Python 版 `Sigrika_signholding`，替换了原先自制的 `xixi_holdsign_1-4`：素材（`P1-P6.gif` 与标定文件 `xixi_holdsign.json`）保持原始编号顺序，表情 1-6 依次对应 `P1-P6`，牌面按每帧标定框的位置 + 底边倾角旋转放置文本，约 30 fps。文字默认颜色为色表中的「橙」（`#ffae2e`，老版默认色，已替换原橙 #e67e22；如需原值可用 `#e67e22`），使用 `Kingnammm Maiyuan 2`（荆南麦圆体）字体，彩色 emoji 正常显示。正文末尾支持颜色标记 `#颜色` / `##颜色`（30 色预设名、6 位 hex 或 `r,g,b` 三元组，全角 `＃` 等效；同时出现以最右单个 `#` 为准；无法识别的标记如 `C#编程` 原样保留；亦支持旧写法 `-c 颜色`；语义与娅娅/小爱举牌完全一致，见 `holdsign::split_color_tail`）。文字安全区沿用老版逻辑：标定框宽高各内缩 12px。换行与字号使用全举牌统一逻辑（`src/textfit.rs`：40 起逐档减到 18、按像素宽度折行、ASCII 词组不拆行、最多 3 行、超出报错）。不传文字时使用各表情默认文案：1 咕噜噜–– / 2 点亮语义！ / 3 开心 / 4 悲伤 / 5 得意 / 6 哭哭。GIF 编码使用每帧的原始时长（30/40ms 混排），比 Python 版统一取首帧时长更还原。
+`xixi_holdsign_1-6`（西西举牌）使用官方 `motion3 + moc3` 网格动态合成，六个动作默认都使用牌子样式 1。参数写法为：`文字 | 牌子=1/2/3 | 牌子色=颜色 | 字色=颜色`，后三项均可省略，例如 `你好 | 牌子=2 | 牌子色=蓝 | 字色=白`。颜色支持色表名称、6 位 hex 或 `r,g,b`；旧的正文末尾 `#颜色` 写法仍表示文字颜色。牌面、文字和手部每次请求实时合成，GIF 使用官方 `30/40/30ms` 帧时序。
 
 `xixi_goldpig` / `xixi_goldpig_2` 是 16.7 fps 的 GIF 模板（分别 27 帧 / 18 帧）：模板里有一个圆形透明区域（半径 67px / 65px）用来放置传入的图片，图片按 `cover` 缩放、裁成圆形填满圆窗、保持正立并跟随各自 `centers.json` 里每帧的圆心移动，圆形区域外的手指会盖在图片上层。传入的图可以是静图，也可以是 GIF——GIF 会在圆内循环播放，与模板动画一起循环（`FrameAlign::ExtendLoop`）。
 
@@ -51,7 +51,7 @@ cargo build --release
 
 ## 字体
 
-`resources/fonts/Kingnammm-Maiyuan.ttf`（荆南麦圆体，字族名 `Kingnammm Maiyuan 2`）是所有举牌表情（`xixi_holdsign_1-6`、`yaya_holdsign_*` / `ams_holdsign_*`）运行所需的字体。`meme-generator-rs` 的字体加载路径默认是 `~/.meme_generator/resources/fonts/`（可通过 `MEME_FONTS_DIR` 环境变量覆盖）。把这些 ttf 复制到那个目录里，再加载本仓库的 cdylib 就能正常出图。举牌素材 `resources/images/xixi_holdsign/`、`resources/images/yaya_holdsign/`、`resources/images/ams_holdsign/` 也需一并放到 `~/.meme_generator/resources/images/` 下（目录已整体改名：原 `sigrika_signholding`→`xixi_holdsign`、`denia_jupai`→`yaya_holdsign`、`am_jupai`→`ams_holdsign`；若沿用旧 `denia_jupai/` 部署请删除其中 `am_*` 文件，小爱素材现独立在 `ams_holdsign/` 且无 `am_` 前缀）。
+`resources/fonts/Kingnammm-Maiyuan.ttf`（荆南麦圆体，字族名 `Kingnammm Maiyuan 2`）是所有举牌表情运行所需的字体。举牌素材统一位于 `resources/images/holdsign/`：`person/xixi|yaya|ams/` 保存三套人物 GIF，`paizipng/` 保存三种牌面分层，`model/` 保存官方手部纹理。
 
 `kurogames_iuno_say`（尤诺说）使用 `FZShaoEr-M11S`（方正少儿简体），该字体随 `meme-generator-rs` 自带，无需额外安装。
 

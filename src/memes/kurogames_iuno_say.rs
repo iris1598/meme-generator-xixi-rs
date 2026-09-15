@@ -18,7 +18,11 @@ fn kurogames_iuno_say(
     texts: Vec<String>,
     _: NoOptions,
 ) -> Result<Vec<u8>, Error> {
-    let text = if !texts.is_empty() { &texts[0] } else { DEFAULT_TEXT };
+    let text = if !texts.is_empty() {
+        &texts[0]
+    } else {
+        DEFAULT_TEXT
+    };
     let frame = load_image("kurogames_iuno_say/0.jpg")?;
     let mut surface = frame.to_surface();
     let canvas = surface.canvas();

@@ -3,7 +3,7 @@ use skia_safe::{Color, Image};
 use meme_generator_core::error::Error;
 use meme_generator_utils::{
     builder::InputImage,
-    encoder::{make_gif_or_combined_gif, FrameAlign, GifInfo},
+    encoder::{FrameAlign, GifInfo, make_gif_or_combined_gif},
     image::{Fit, ImageExt},
     tools::{load_image, local_date, new_surface},
 };
@@ -18,10 +18,24 @@ const RADIUS: f32 = 65.0;
 
 /// Per-frame center (cx, cy) of the circular window, from 素材2/centers.json.
 const CENTERS: [(f32, f32); FRAME_NUM as usize] = [
-    (241.94, 187.03), (242.00, 186.37), (242.07, 180.57), (242.17, 176.86), (242.21, 174.39),
-    (242.69, 170.40), (242.00, 175.02), (242.00, 178.91), (241.79, 183.48), (241.94, 187.03),
-    (242.00, 186.37), (242.07, 180.57), (242.19, 177.52), (242.22, 174.08), (242.00, 171.26),
-    (242.00, 175.02), (242.00, 178.91), (241.79, 183.48),
+    (241.94, 187.03),
+    (242.00, 186.37),
+    (242.07, 180.57),
+    (242.17, 176.86),
+    (242.21, 174.39),
+    (242.69, 170.40),
+    (242.00, 175.02),
+    (242.00, 178.91),
+    (241.79, 183.48),
+    (241.94, 187.03),
+    (242.00, 186.37),
+    (242.07, 180.57),
+    (242.19, 177.52),
+    (242.22, 174.08),
+    (242.00, 171.26),
+    (242.00, 175.02),
+    (242.00, 178.91),
+    (241.79, 183.48),
 ];
 
 fn xixi_goldpig_2(images: Vec<InputImage>, _: Vec<String>, _: NoOptions) -> Result<Vec<u8>, Error> {
