@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::path::PathBuf;
 
 use serde::Deserialize;
 use skia_safe::{
@@ -156,6 +157,17 @@ fn load_static_image(path: &std::path::Path) -> Result<Image, Error> {
     Ok(codec.get_frame(0)?.to_surface().image_snapshot())
 }
 
+fn asset_path(relative: &str) -> PathBuf {
+    let deployed = IMAGES_DIR.join(relative);
+    if deployed.is_file() || deployed.is_dir() {
+        deployed
+    } else {
+        PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("resources/images")
+            .join(relative)
+    }
+}
+
 fn tint_filter(color: Color) -> ColorFilter {
     color_filters::lighting(color, Color::BLACK).expect("lighting color filter")
 }
@@ -166,7 +178,7 @@ fn make_dynamic_atlas(
     sign_color: Color,
     text_color: Color,
 ) -> Result<Image, Error> {
-    let base = IMAGES_DIR.join("holdsign/paizipng");
+    let base = asset_path("holdsign/paizipng");
     let mut surface = new_surface((1024, 1024));
     surface.canvas().clear(Color::TRANSPARENT);
     let accent = sign_color;
@@ -241,7 +253,7 @@ pub(crate) fn render_base(
 ) -> Result<Vec<u8>, Error> {
     let name = format!("P{template_id}");
     let gif_path = person_path.to_string();
-    let image_path = IMAGES_DIR.join(&gif_path);
+    let image_path = asset_path(&gif_path);
     if !(image_path.exists() && image_path.is_file()) {
         return Err(Error::ImageAssetMissing(gif_path));
     }
@@ -253,7 +265,7 @@ pub(crate) fn render_base(
     // 文字：剥色（与娅娅/小爱同一语义）-> 空则用默认文字
     let (body, style, sign_color, text_color) = parse_args(text, default_text)?;
     let atlas = make_dynamic_atlas(style, &body, sign_color, text_color)?;
-    let hand = load_static_image(&IMAGES_DIR.join("holdsign/model/texture_01.png"))?;
+    let hand = load_static_image(&asset_path("holdsign/model/texture_01.png"))?;
     let drawables: DrawableFile =
         serde_json::from_str(DRAWABLES_JSON).expect("invalid cubism_drawables.json");
     let aligns: AlignFile =
@@ -313,7 +325,10 @@ pub(crate) fn render_base(
             let mut paint = Paint::default();
             paint.set_shader(shader);
             paint.set_alpha((d.opacity.clamp(0.0, 1.0) * 255.0) as u8);
-            canvas.draw_vertices(&vertices, BlendMode::SrcOver, &paint);
+            // Vertex colors are white; Modulate preserves the texture RGBA.
+            // SrcOver would treat the vertex color as an opaque source and
+            // erase the person layer behind transparent atlas pixels.
+            canvas.draw_vertices(&vertices, BlendMode::Modulate, &paint);
         }
         encoder.add_frame(surface.image_snapshot(), duration)?;
     }
@@ -351,6 +366,7 @@ holdsign_meme!(
     "咕噜噜––",
     ["西西举牌", "西西举牌1"]
 );
+
 holdsign_meme!(
     "xixi_holdsign_2",
     2,
