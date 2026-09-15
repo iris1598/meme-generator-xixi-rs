@@ -141,9 +141,7 @@ fn make_text_layer(text: &str, w: i32, h: i32, color: Color) -> Result<skia_safe
         surface.canvas(),
         (
             (w as f32 - t2i.longest_line()) / 2.0,
-            // Skia text metrics include the descent below the visible glyphs;
-            // the official tool centers the visible ink, not that descent.
-            (h as f32 - t2i.height()) / 2.0 - h as f32 * 0.055,
+            (h as f32 - t2i.height()) / 2.0,
         ),
     );
     Ok(surface.image_snapshot())

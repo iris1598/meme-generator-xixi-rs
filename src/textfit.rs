@@ -7,7 +7,7 @@ use skia_safe::{Paint, textlayout::TextAlign};
 /// （ASCII 字母数字连成词不拆行），最多 MAX_LINES 行，全部塞不下则报错。
 
 pub const MIN_FONT_SIZE: f32 = 18.0;
-pub const MAX_FONT_SIZE: f32 = 40.0;
+pub const MAX_FONT_SIZE: f32 = 76.0;
 pub const MAX_LINES: usize = 3;
 
 pub struct FittedText {
