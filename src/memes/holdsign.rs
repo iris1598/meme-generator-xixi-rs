@@ -167,7 +167,10 @@ fn asset_path(relative: &str) -> PathBuf {
 }
 
 fn tint_filter(color: Color) -> ColorFilter {
-    color_filters::lighting(color, Color::BLACK).expect("lighting color filter")
+    // The source line masks are black pixels with varying alpha. Lighting
+    // would multiply that RGB by the requested color and keep them black;
+    // SrcIn replaces RGB with the requested color while preserving alpha.
+    color_filters::blend(color, BlendMode::SrcIn).expect("blend color filter")
 }
 
 fn make_dynamic_atlas(
@@ -222,8 +225,7 @@ fn parse_args(
     let (body0, legacy_color) = split_color_tail(&body);
     body = body0;
     let mut style = 1u32;
-    // Defaults sampled from the official xixi reference image:
-    // white face, #f8b860 sign shell, and #f18625 inner line.
+    // The caller supplies character-specific official shell/inner defaults.
     let mut board_color = parse_color("ffffff")?;
     let mut frame_color = default_frame;
     let mut inner_color = default_inner;
