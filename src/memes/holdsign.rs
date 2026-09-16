@@ -25,7 +25,6 @@ use crate::{
 
 const FONT_FAMILIES: &[&str] = &["Kingnammm Maiyuan 2", "荆南麦圆 2"];
 const PAD: f32 = 12.0;
-const FALLBACK_FRAME_DURATION: f32 = 0.03;
 const DRAWABLES_JSON: &str = include_str!("../data/live2d/cubism_drawables.json");
 const ALIGN_JSON: &str = include_str!("../data/live2d/live2d_brand_align.json");
 
@@ -340,11 +339,10 @@ pub(crate) fn render_base(
     let mut encoder = GifEncoder::new();
     for i in 0..frame_count {
         let frame = codec.get_frame(i)?;
-        let duration = codec
-            .get_frame_info(i)
-            .map(|info| info.duration as f32 / 1000.0)
-            .filter(|d| *d > 0.0)
-            .unwrap_or(FALLBACK_FRAME_DURATION);
+        // The official sign animation uses the repeating 30/40/30 ms
+        // cadence. Person-only base GIFs are all 30 ms, so their metadata
+        // cannot be used for the final composed animation timing.
+        let duration = [0.03_f32, 0.04, 0.03][i % 3];
         let mut surface = frame.to_surface();
         let canvas = surface.canvas();
         let mut frame_drawables: Vec<_> = motion[i].iter().filter(|d| d.opacity > 0.001).collect();
