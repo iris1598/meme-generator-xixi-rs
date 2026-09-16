@@ -218,6 +218,7 @@ fn parse_args(
     default_text: &str,
     default_frame: Color,
     default_inner: Color,
+    default_text_color: Color,
 ) -> Result<(String, u32, Color, Color, Color, Color), Error> {
     let mut parts = raw.split('|').map(str::trim);
     let first = parts.next().unwrap_or_default();
@@ -229,7 +230,11 @@ fn parse_args(
     let mut board_color = parse_color("ffffff")?;
     let mut frame_color = default_frame;
     let mut inner_color = default_inner;
-    let mut text_color = parse_color(legacy_color.as_deref().unwrap_or("橙"))?;
+    let mut text_color = legacy_color
+        .as_deref()
+        .map(parse_color)
+        .transpose()?
+        .unwrap_or(default_text_color);
     for part in parts {
         let Some((key, value)) = part.split_once('=') else {
             continue;
@@ -296,8 +301,19 @@ pub(crate) fn render_base(
     } else {
         parse_color("000000")?
     };
-    let (body, style, board_color, frame_color, inner_color, text_color) =
-        parse_args(text, default_text, default_frame, default_inner)?;
+    let default_text_color = if person_path.contains("/xixi/") {
+        parse_color("ffae2e")?
+    } else {
+        // The previous official yaya/ams pipeline used the named pink preset.
+        parse_color("f6c4c4")?
+    };
+    let (body, style, board_color, frame_color, inner_color, text_color) = parse_args(
+        text,
+        default_text,
+        default_frame,
+        default_inner,
+        default_text_color,
+    )?;
     let atlas = make_dynamic_atlas(
         style,
         &body,
