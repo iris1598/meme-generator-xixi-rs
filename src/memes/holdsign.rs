@@ -173,25 +173,27 @@ fn tint_filter(color: Color) -> ColorFilter {
 fn make_dynamic_atlas(
     style: u32,
     text: &str,
-    sign_color: Color,
+    board_color: Color,
+    frame_color: Color,
+    inner_color: Color,
     text_color: Color,
 ) -> Result<Image, Error> {
     let base = asset_path("holdsign/paizipng");
     let mut surface = new_surface((1024, 1024));
     surface.canvas().clear(Color::TRANSPARENT);
-    let accent = sign_color;
-    // The official order is base, upper white panel, lower colored frame, line art.
+    let accent = frame_color;
+    // The line masks are mutually exclusive and reconstruct the original
+    // line art, so antialiasing from the outer line cannot show through.
     for (layer, paint_color) in [
-        ("底色", Color::WHITE),
-        ("上", Color::WHITE),
+        ("底色", board_color),
+        ("上", board_color),
         ("下", accent),
-        ("线稿", Color::BLACK),
+        ("线稿外", Color::BLACK),
+        ("线稿内", inner_color),
     ] {
         let image = load_static_image(&base.join(format!("牌子{style}{layer}.png")))?;
         let mut paint = Paint::default();
-        if layer != "线稿" {
-            paint.set_color_filter(tint_filter(paint_color));
-        }
+        paint.set_color_filter(tint_filter(paint_color));
         surface
             .canvas()
             .draw_image(&image, (0.0, 256.0), Some(&paint));
@@ -208,14 +210,23 @@ fn make_dynamic_atlas(
     Ok(surface.image_snapshot())
 }
 
-fn parse_args(raw: &str, default_text: &str) -> Result<(String, u32, Color, Color), Error> {
+fn parse_args(
+    raw: &str,
+    default_text: &str,
+    default_frame: Color,
+    default_inner: Color,
+) -> Result<(String, u32, Color, Color, Color, Color), Error> {
     let mut parts = raw.split('|').map(str::trim);
     let first = parts.next().unwrap_or_default();
     let mut body = first.to_string();
     let (body0, legacy_color) = split_color_tail(&body);
     body = body0;
     let mut style = 1u32;
-    let mut sign_color = parse_color("橙")?;
+    // Defaults sampled from the official xixi reference image:
+    // white face, #f8b860 sign shell, and #f18625 inner line.
+    let mut board_color = parse_color("ffffff")?;
+    let mut frame_color = default_frame;
+    let mut inner_color = default_inner;
     let mut text_color = parse_color(legacy_color.as_deref().unwrap_or("橙"))?;
     for part in parts {
         let Some((key, value)) = part.split_once('=') else {
@@ -232,7 +243,11 @@ fn parse_args(raw: &str, default_text: &str) -> Result<(String, u32, Color, Colo
                     return Err(Error::MemeFeedback("牌子样式必须是 1、2 或 3".into()));
                 }
             }
-            "牌子色" | "牌子颜色" | "sign_color" => sign_color = parse_color(value)?,
+            "牌面色" | "底色" | "board_color" => board_color = parse_color(value)?,
+            "牌子色" | "牌色" | "框色" | "边框色" | "frame_color" => {
+                frame_color = parse_color(value)?
+            }
+            "内框色" | "内框颜色" | "inner_color" => inner_color = parse_color(value)?,
             "字色" | "文字色" | "text_color" => text_color = parse_color(value)?,
             _ => {}
         }
@@ -240,7 +255,14 @@ fn parse_args(raw: &str, default_text: &str) -> Result<(String, u32, Color, Colo
     if body.is_empty() {
         body = default_text.to_string();
     }
-    Ok((body, style, sign_color, text_color))
+    Ok((
+        body,
+        style,
+        board_color,
+        frame_color,
+        inner_color,
+        text_color,
+    ))
 }
 
 pub(crate) fn render_base(
@@ -261,8 +283,27 @@ pub(crate) fn render_base(
         .ok_or_else(|| Error::ImageDecodeError("Failed to decode gif".to_string()))?;
 
     // 文字：剥色（与娅娅/小爱同一语义）-> 空则用默认文字
-    let (body, style, sign_color, text_color) = parse_args(text, default_text)?;
-    let atlas = make_dynamic_atlas(style, &body, sign_color, text_color)?;
+    let default_frame = if person_path.contains("/xixi/") {
+        parse_color("f8b860")?
+    } else {
+        // Official yaya/ams sign assets use pink shell #f5c3c3.
+        parse_color("f5c3c3")?
+    };
+    let default_inner = if person_path.contains("/xixi/") {
+        parse_color("f18625")?
+    } else {
+        parse_color("000000")?
+    };
+    let (body, style, board_color, frame_color, inner_color, text_color) =
+        parse_args(text, default_text, default_frame, default_inner)?;
+    let atlas = make_dynamic_atlas(
+        style,
+        &body,
+        board_color,
+        frame_color,
+        inner_color,
+        text_color,
+    )?;
     let hand = load_static_image(&asset_path("holdsign/model/texture_01.png"))?;
     let drawables: DrawableFile =
         serde_json::from_str(DRAWABLES_JSON).expect("invalid cubism_drawables.json");
