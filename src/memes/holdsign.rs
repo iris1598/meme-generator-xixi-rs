@@ -133,38 +133,16 @@ fn make_text_layer(text: &str, w: i32, h: i32, color: Color) -> Result<skia_safe
     let box_h = (h - 2 * PAD as i32).max(1) as f32;
     let paint = new_paint(color);
     let fitted = fit_sign_text(text, box_w, box_h, FONT_FAMILIES, &paint)?;
+    let t2i = measure_text(&fitted.wrapped, fitted.size, FONT_FAMILIES, &paint);
     let mut surface = new_surface((w, h));
     surface.canvas().clear(Color::TRANSPARENT);
-    let lines: Vec<&str> = fitted.wrapped.lines().collect();
-    if lines.len() <= 1 {
-        let t2i = measure_text(&fitted.wrapped, fitted.size, FONT_FAMILIES, &paint);
-        t2i.draw_on_canvas(
-            surface.canvas(),
-            (
-                (w as f32 - t2i.longest_line()) / 2.0,
-                (h as f32 - t2i.height()) / 2.0,
-            ),
-        );
-    } else {
-        // Skia's default paragraph leading is loose for wrapped sign text.
-        // Draw each line independently with a compact 0.88x font-height step.
-        let rendered: Vec<_> = lines
-            .iter()
-            .map(|line| measure_text(line, fitted.size, FONT_FAMILIES, &paint))
-            .collect();
-        let step = fitted.size * 0.88;
-        let total_h = step * rendered.len() as f32;
-        let y0 = (h as f32 - total_h) / 2.0;
-        for (index, line) in rendered.iter().enumerate() {
-            line.draw_on_canvas(
-                surface.canvas(),
-                (
-                    (w as f32 - line.longest_line()) / 2.0,
-                    y0 + index as f32 * step,
-                ),
-            );
-        }
-    }
+    t2i.draw_on_canvas(
+        surface.canvas(),
+        (
+            (w as f32 - t2i.longest_line()) / 2.0,
+            (h as f32 - t2i.height()) / 2.0,
+        ),
+    );
     Ok(surface.image_snapshot())
 }
 
