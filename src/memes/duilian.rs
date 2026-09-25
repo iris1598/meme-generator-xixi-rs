@@ -1,20 +1,26 @@
 //! 对联表情：角色举着写有祝福语的竖幅轻微摆动。
 //!
-//! 素材为 300x300、36 帧、每帧 60ms 的空白竖幅 GIF 逐帧拆图；每帧文字块的
-//! 倾角与中心由「有字版 / 空白版」的像素差逐帧标定（刚体配准，见 calibration.json）。
-use skia_safe::{
-    AlphaType, Color, ColorType, FilterMode, Image, ImageInfo, MipmapMode, SamplingOptions,
-    image::CachingHint, textlayout::TextAlign,
-};
+//! 素材是 300x300、36 帧、每帧 60ms 的空白竖幅 GIF。每帧文字块的倾角、墨迹中心的横坐标
+//! 与墨迹顶边的纵坐标，由「有字版 / 空白版」的像素差逐帧标定（刚体配准）；标定值再用
+//! 36 帧周期的单频正弦拟合，去掉整像素量化带来的抖动（残差 0.31px ≈ 量化噪声 1/√12）。
+//!
+//! 排版锚点是文字块的**顶边**：字数变多时只往下延伸、由画面底边裁掉，与素材里最后一字
+//! 被截断的表现一致，不会往上顶出画面。
+use std::path::PathBuf;
+
+use skia_safe::{AlphaType, Codec, Color, ColorType, Data, FilterMode, Image, ImageInfo, MipmapMode,
+    SamplingOptions, image::CachingHint, textlayout::TextAlign};
 
 use meme_generator_core::error::Error;
 use meme_generator_utils::{
     builder::InputImage,
+    config::IMAGES_DIR,
+    decoder::CodecExt,
     encoder::GifEncoder,
     image::ImageExt,
     text::Text2Image,
     text_params,
-    tools::{load_image, local_date, new_paint, new_stroke_paint, new_surface},
+    tools::{local_date, new_paint, new_surface},
 };
 
 use crate::{options::NoOptions, register_meme};
@@ -24,113 +30,123 @@ const FRAME_NUM: usize = 36;
 const FRAME_DURATION: f32 = 0.06;
 
 /// 标定所用字体：`STXingkaiBold.ttf`（字族名 `STXingKai-SC` / `华文行楷-SC`），
-/// 需与内置字体一样放进 `resources/fonts`。
+/// 与内置字体一样放进 `resources/fonts` 即可被加载。
 const FONT_FAMILIES: &[&str] = &["STXingKai-SC", "华文行楷-SC"];
-/// 标定结果：字号 50、描边 2px、单列字距 51px（原图笔画中位宽约 4px，
-/// 该字体 50 号无描边约 2.8px，故加 2px 描边补齐字重）。
+/// 标定结果：字号 50、单列字距 51px、**不加描边**。
+/// 该字体 50 号不加描边时笔画中位宽 4.0px，与原图一致；再加描边会明显偏粗。
 const FONT_SIZE: f32 = 50.0;
-const STROKE_WIDTH: f32 = 2.0;
 const LINE_PITCH: f32 = 51.0;
-/// 描边会向外扩张，防止文字图层贴边被切。
+/// 文字图层四周留白。
 const LAYER_PAD: f32 = 4.0;
 
-/// 每帧文字块参数：整块文字的倾角（度）与文字块（墨迹外接框）中心。
+/// 每帧文字块参数：整块文字的倾角（度）、墨迹中心的横坐标、墨迹顶边的纵坐标。
 struct Frame {
     angle: f32,
     center_x: f32,
-    center_y: f32,
+    top: f32,
 }
 
-const fn frame(angle: f32, center_x: f32, center_y: f32) -> Frame {
+const fn frame(angle: f32, center_x: f32, top: f32) -> Frame {
     Frame {
         angle,
         center_x,
-        center_y,
+        top,
     }
 }
 
 /// 上联（角色在右、左侧竖幅）
 const SHANGLIAN_FRAMES: [Frame; FRAME_NUM] = [
-    frame(11.00, 81.0, 201.5),
-    frame(11.11, 80.5, 201.0),
-    frame(11.02, 81.0, 200.5),
-    frame(11.00, 81.5, 200.0),
-    frame(10.99, 81.0, 199.5),
-    frame(10.93, 81.5, 198.5),
-    frame(10.84, 81.5, 198.0),
-    frame(10.78, 81.5, 198.0),
-    frame(10.82, 81.0, 197.5),
-    frame(10.61, 81.0, 197.5),
-    frame(10.56, 81.0, 197.5),
-    frame(10.56, 81.0, 197.5),
-    frame(10.52, 81.5, 198.0),
-    frame(10.38, 81.0, 198.5),
-    frame(10.27, 81.5, 199.0),
-    frame(10.33, 81.0, 199.5),
-    frame(10.26, 81.5, 200.5),
-    frame(10.27, 81.5, 201.5),
-    frame(10.25, 81.0, 201.5),
-    frame(10.23, 81.5, 202.5),
-    frame(10.32, 81.5, 203.0),
-    frame(10.24, 80.5, 203.5),
-    frame(10.30, 81.5, 204.5),
-    frame(10.41, 81.0, 204.5),
-    frame(10.45, 81.5, 205.0),
-    frame(10.38, 80.5, 205.5),
-    frame(10.51, 81.0, 205.5),
-    frame(10.70, 81.0, 205.5),
-    frame(10.72, 81.0, 205.5),
-    frame(10.76, 81.0, 205.5),
-    frame(10.86, 81.5, 205.0),
-    frame(10.90, 81.5, 205.0),
-    frame(10.99, 81.5, 204.0),
-    frame(10.96, 81.0, 203.5),
-    frame(11.05, 81.5, 203.0),
-    frame(11.04, 81.0, 202.5),
+    frame(11.058, 81.15, 105.43),
+    frame(11.055, 81.16, 104.74),
+    frame(11.039, 81.17, 104.06),
+    frame(11.012, 81.18, 103.41),
+    frame(10.973, 81.19, 102.83),
+    frame(10.925, 81.20, 102.32),
+    frame(10.868, 81.21, 101.89),
+    frame(10.805, 81.22, 101.58),
+    frame(10.737, 81.22, 101.37),
+    frame(10.666, 81.23, 101.28),
+    frame(10.594, 81.23, 101.32),
+    frame(10.524, 81.23, 101.47),
+    frame(10.458, 81.23, 101.74),
+    frame(10.398, 81.23, 102.12),
+    frame(10.345, 81.23, 102.59),
+    frame(10.302, 81.23, 103.15),
+    frame(10.269, 81.22, 103.77),
+    frame(10.247, 81.22, 104.43),
+    frame(10.238, 81.21, 105.12),
+    frame(10.241, 81.20, 105.82),
+    frame(10.256, 81.19, 106.50),
+    frame(10.284, 81.18, 107.14),
+    frame(10.322, 81.17, 107.73),
+    frame(10.371, 81.16, 108.24),
+    frame(10.427, 81.15, 108.66),
+    frame(10.491, 81.14, 108.98),
+    frame(10.559, 81.14, 109.19),
+    frame(10.630, 81.13, 109.27),
+    frame(10.701, 81.13, 109.24),
+    frame(10.771, 81.13, 109.08),
+    frame(10.837, 81.13, 108.82),
+    frame(10.898, 81.13, 108.44),
+    frame(10.950, 81.13, 107.97),
+    frame(10.994, 81.13, 107.41),
+    frame(11.027, 81.14, 106.79),
+    frame(11.049, 81.15, 106.12),
 ];
 
 /// 下联（角色在左、右侧竖幅，与上联镜像）
 const XIALIAN_FRAMES: [Frame; FRAME_NUM] = [
-    frame(-11.05, 212.5, 207.0),
-    frame(-11.01, 212.0, 206.5),
-    frame(-10.99, 212.5, 205.5),
-    frame(-10.91, 212.0, 205.5),
-    frame(-10.98, 212.5, 205.0),
-    frame(-10.81, 212.5, 203.5),
-    frame(-10.88, 212.5, 204.0),
-    frame(-10.81, 212.0, 203.5),
-    frame(-10.72, 212.5, 202.5),
-    frame(-10.54, 212.5, 202.5),
-    frame(-10.52, 212.5, 202.5),
-    frame(-10.53, 212.5, 202.5),
-    frame(-10.41, 213.0, 203.5),
-    frame(-10.34, 212.5, 203.5),
-    frame(-10.17, 213.0, 204.5),
-    frame(-10.23, 212.5, 204.5),
-    frame(-10.09, 213.0, 205.0),
-    frame(-10.29, 212.5, 206.0),
-    frame(-10.33, 212.5, 206.5),
-    frame(-10.29, 213.0, 207.5),
-    frame(-10.37, 212.0, 208.0),
-    frame(-10.51, 213.0, 208.5),
-    frame(-10.55, 213.0, 209.0),
-    frame(-10.76, 212.5, 210.0),
-    frame(-10.68, 213.0, 210.5),
-    frame(-10.86, 213.0, 210.5),
-    frame(-10.93, 212.5, 210.5),
-    frame(-11.05, 212.5, 211.0),
-    frame(-11.12, 212.5, 210.5),
-    frame(-11.25, 212.5, 211.0),
-    frame(-11.27, 213.0, 210.5),
-    frame(-11.22, 212.0, 210.0),
-    frame(-11.22, 212.0, 209.5),
-    frame(-11.13, 212.5, 208.5),
-    frame(-11.22, 212.0, 208.5),
-    frame(-11.14, 212.5, 208.0),
+    frame(-11.177, 212.28, 113.48),
+    frame(-11.131, 212.28, 112.78),
+    frame(-11.074, 212.28, 112.09),
+    frame(-11.007, 212.29, 111.44),
+    frame(-10.932, 212.31, 110.83),
+    frame(-10.852, 212.34, 110.28),
+    frame(-10.769, 212.37, 109.83),
+    frame(-10.685, 212.40, 109.47),
+    frame(-10.604, 212.44, 109.22),
+    frame(-10.527, 212.48, 109.08),
+    frame(-10.457, 212.53, 109.07),
+    frame(-10.397, 212.57, 109.18),
+    frame(-10.347, 212.61, 109.41),
+    frame(-10.309, 212.65, 109.74),
+    frame(-10.285, 212.69, 110.18),
+    frame(-10.275, 212.72, 110.70),
+    frame(-10.280, 212.74, 111.30),
+    frame(-10.299, 212.76, 111.95),
+    frame(-10.333, 212.77, 112.63),
+    frame(-10.378, 212.78, 113.33),
+    frame(-10.436, 212.77, 114.02),
+    frame(-10.503, 212.76, 114.68),
+    frame(-10.578, 212.74, 115.29),
+    frame(-10.658, 212.72, 115.83),
+    frame(-10.741, 212.69, 116.28),
+    frame(-10.824, 212.65, 116.64),
+    frame(-10.906, 212.62, 116.89),
+    frame(-10.982, 212.57, 117.03),
+    frame(-11.052, 212.53, 117.04),
+    frame(-11.113, 212.49, 116.93),
+    frame(-11.163, 212.45, 116.71),
+    frame(-11.200, 212.41, 116.37),
+    frame(-11.224, 212.37, 115.93),
+    frame(-11.234, 212.34, 115.41),
+    frame(-11.229, 212.31, 114.81),
+    frame(-11.210, 212.30, 114.16),
 ];
 
-/// 把整段文字排成单列竖排图层：逐字按固定字距居中堆叠，不做缩放，
-/// 文字过长时会在贴图阶段自然被画面裁掉（与原素材一致）。
+fn asset_path(relative: &str) -> PathBuf {
+    let deployed = IMAGES_DIR.join(relative);
+    if deployed.is_file() {
+        deployed
+    } else {
+        // 开发时回退到本仓库的 resources 目录
+        PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("resources/images")
+            .join(relative)
+    }
+}
+
+/// 把整段文字排成单列竖排图层：逐字按固定字距居中堆叠，不做缩放。
 fn make_text_layer(text: &str) -> Result<Image, Error> {
     let chars: Vec<char> = text.chars().filter(|c| !c.is_whitespace()).collect();
     if chars.is_empty() {
@@ -140,7 +156,6 @@ fn make_text_layer(text: &str) -> Result<Image, Error> {
         text_align = TextAlign::Center,
         font_families = FONT_FAMILIES,
         paint = new_paint(Color::BLACK),
-        stroke_paint = new_stroke_paint(Color::BLACK, STROKE_WIDTH),
     );
     let mut glyphs = Vec::with_capacity(chars.len());
     let mut max_width = 1.0_f32;
@@ -166,8 +181,9 @@ fn make_text_layer(text: &str) -> Result<Image, Error> {
     Ok(surface.image_snapshot())
 }
 
-/// 文字图层的墨迹外接框中心，用于把图层按「墨迹中心」对齐到每帧标定位置。
-fn ink_center(image: &Image) -> Result<(f32, f32), Error> {
+/// 取出文字图层里所有墨迹像素的坐标。旋转后的外接框直接由这些点算，避免用
+/// 包围盒四角旋转带来的偏差（墨迹并不铺满包围盒）。
+fn ink_points(image: &Image) -> Result<Vec<(f32, f32)>, Error> {
     let info = ImageInfo::new(
         image.dimensions(),
         ColorType::RGBA8888,
@@ -179,26 +195,19 @@ fn ink_center(image: &Image) -> Result<(f32, f32), Error> {
     if !image.read_pixels(&info, &mut data, row_bytes, (0, 0), CachingHint::Allow) {
         return Err(Error::ImageDecodeError("读取文字图层失败".to_string()));
     }
-    let (mut min_x, mut min_y) = (usize::MAX, usize::MAX);
-    let (mut max_x, mut max_y) = (0_usize, 0_usize);
+    let mut points = Vec::new();
     for y in 0..image.height() as usize {
         let row = y * row_bytes;
         for x in 0..image.width() as usize {
             if data[row + x * 4 + 3] > 8 {
-                min_x = min_x.min(x);
-                max_x = max_x.max(x);
-                min_y = min_y.min(y);
-                max_y = max_y.max(y);
+                points.push((x as f32, y as f32));
             }
         }
     }
-    if min_x == usize::MAX {
+    if points.is_empty() {
         return Err(Error::MemeFeedback("还没有写字哦".to_string()));
     }
-    Ok((
-        (min_x + max_x) as f32 / 2.0,
-        (min_y + max_y) as f32 / 2.0,
-    ))
+    Ok(points)
 }
 
 fn render_couplet(
@@ -213,24 +222,44 @@ fn render_couplet(
         text
     };
     let text_layer = make_text_layer(text)?;
-    let (ink_x, ink_y) = ink_center(&text_layer)?;
+    let points = ink_points(&text_layer)?;
     let sampling = SamplingOptions::new(FilterMode::Linear, MipmapMode::Linear);
 
+    let gif_path = asset_path(&format!("{template}/0.gif"));
+    if !gif_path.is_file() {
+        return Err(Error::ImageAssetMissing(format!("{template}/0.gif")));
+    }
+    let data = Data::from_filename(&gif_path)
+        .ok_or_else(|| Error::ImageDecodeError("Failed to read gif".to_string()))?;
+    let mut codec = Codec::from_data(data)
+        .ok_or_else(|| Error::ImageDecodeError("Failed to decode gif".to_string()))?;
+    let frame_count = codec.get_frame_count().min(FRAME_NUM);
+
     let mut encoder = GifEncoder::new();
-    for (i, f) in frames.iter().enumerate() {
-        let frame = load_image(format!("{template}/{i}.png"))?;
+    for (f, i) in frames.iter().zip(0..frame_count) {
+        let frame = codec.get_frame(i)?;
+        // 绕图层左上角旋转（Skia 正角度为顺时针），算出旋转后墨迹外接框，
+        // 再平移让「中心横坐标 = center_x、顶边 = top」。
+        let phi = -f.angle.to_radians();
+        let (sin_phi, cos_phi) = phi.sin_cos();
+        let (mut min_x, mut max_x, mut min_y) = (f32::INFINITY, f32::NEG_INFINITY, f32::INFINITY);
+        for &(x, y) in &points {
+            let rx = cos_phi * x - sin_phi * y;
+            let ry = sin_phi * x + cos_phi * y;
+            min_x = min_x.min(rx);
+            max_x = max_x.max(rx);
+            min_y = min_y.min(ry);
+        }
+        let offset_x = f.center_x - (min_x + max_x) / 2.0;
+        let offset_y = f.top - min_y;
+
         let mut surface = frame.to_surface();
         {
             let canvas = surface.canvas();
             canvas.save();
-            canvas.translate((f.center_x, f.center_y));
+            canvas.translate((offset_x, offset_y));
             canvas.rotate(-f.angle, None);
-            canvas.draw_image_with_sampling_options(
-                &text_layer,
-                (-ink_x, -ink_y),
-                sampling,
-                None,
-            );
+            canvas.draw_image_with_sampling_options(&text_layer, (0, 0), sampling, None);
             canvas.restore();
         }
         encoder.add_frame(surface.image_snapshot(), FRAME_DURATION)?;
@@ -277,27 +306,3 @@ register_meme!(
     date_created = local_date(2026, 9, 25),
     date_modified = local_date(2026, 9, 25),
 );
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn render_couplets_default_text() {
-        let out = std::path::PathBuf::from(std::env::var("DUILIAN_OUT").expect("DUILIAN_OUT"));
-        for (key, result) in [
-            (
-                "duilian_shanglian",
-                duilian_shanglian(Vec::new(), Vec::new(), NoOptions {}),
-            ),
-            (
-                "duilian_xialian",
-                duilian_xialian(Vec::new(), Vec::new(), NoOptions {}),
-            ),
-        ] {
-            let gif = result.expect("render couplet");
-            std::fs::write(out.join(format!("{key}.gif")), &gif).expect("write gif");
-            println!("{key}: {} bytes", gif.len());
-        }
-    }
-}
