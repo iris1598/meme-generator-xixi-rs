@@ -1,3 +1,4 @@
+mod duilian;
 mod holdsign;
 mod kurogames_iuno_say;
 mod xixi_goldpig;
