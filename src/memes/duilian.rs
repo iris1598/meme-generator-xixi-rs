@@ -291,7 +291,7 @@ register_meme!(
     min_texts = 0,
     max_texts = 1,
     default_texts = &["恭喜发财"],
-    keywords = &["对联上联", "上联", "恭喜发财"],
+    keywords = &["西西上联", "上联"],
     date_created = local_date(2026, 9, 25),
     date_modified = local_date(2026, 9, 25),
 );
@@ -302,7 +302,7 @@ register_meme!(
     min_texts = 0,
     max_texts = 1,
     default_texts = &["万事如意"],
-    keywords = &["对联下联", "下联", "万事如意"],
+    keywords = &["西西下联", "下联"],
     date_created = local_date(2026, 9, 25),
     date_modified = local_date(2026, 9, 25),
 );

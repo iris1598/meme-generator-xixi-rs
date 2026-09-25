@@ -26,8 +26,8 @@
 | `xixi_goldpig_2` | 西西展示 | 一张图片（静图或 GIF） |
 | `kurogames_iuno_say` | 尤诺说 | 文本（默认：月亮游离世间） |
 | `zhaoren_nongni` | 西西说 | 文本（默认：再发找人弄你） |
-| `duilian_shanglian` | 对联上联、上联、恭喜发财 | 文本（默认：恭喜发财） |
-| `duilian_xialian` | 对联下联、下联、万事如意 | 文本（默认：万事如意） |
+| `duilian_shanglian` | 西西上联、上联 | 文本（默认：恭喜发财） |
+| `duilian_xialian` | 西西下联、下联 | 文本（默认：万事如意） |
 
 `yaya_holdsign_1-6`（娅娅举牌）、`ams_holdsign_1-6`（小爱举牌）保留现有 `base` 人物 GIF，但牌子改为复用西西官方 `motion3 + moc3` 动态管线；不再读取旧 `sign` GIF 或旧标定数据。牌子样式、牌子颜色、文字颜色和文字均按每次请求实时生成，参数格式与西西举牌相同。
 
